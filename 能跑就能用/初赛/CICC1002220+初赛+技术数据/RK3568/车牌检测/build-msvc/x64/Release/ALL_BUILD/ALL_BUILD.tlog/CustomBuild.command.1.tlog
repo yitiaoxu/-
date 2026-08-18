@@ -1,0 +1,10 @@
+^C:\USERS\23694\DESKTOP\ZIGUANG_PROJECT\车牌检测\CMAKELISTS.TXT
+setlocal
+F:\CMake\bin\cmake.exe -SC:/Users/23694/Desktop/ziguang_project/车牌检测 -BC:/Users/23694/Desktop/ziguang_project/车牌检测/build-msvc --check-stamp-file C:/Users/23694/Desktop/ziguang_project/车牌检测/build-msvc/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

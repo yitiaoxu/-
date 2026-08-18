@@ -1,0 +1,10 @@
+^C:\USERS\23694\DESKTOP\ZIGUANG_PROJECT\车牌检测\BUILD-MSVC\CMAKEFILES\958BA0D085814B483BACB0FDDDD16152\GENERATE.STAMP.RULE
+setlocal
+F:\CMake\bin\cmake.exe -SC:/Users/23694/Desktop/ziguang_project/车牌检测 -BC:/Users/23694/Desktop/ziguang_project/车牌检测/build-msvc --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/23694/Desktop/ziguang_project/车牌检测/build-msvc/plate_detect_correct.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

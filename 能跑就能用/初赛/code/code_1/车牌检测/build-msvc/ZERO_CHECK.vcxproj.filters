@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\23694\Desktop\ziguang_project\车牌检测\build-msvc\CMakeFiles\958ba0d085814b483bacb0fdddd16152\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{D1E25735-D94B-3ED7-BBCD-FC6FDC0B984F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

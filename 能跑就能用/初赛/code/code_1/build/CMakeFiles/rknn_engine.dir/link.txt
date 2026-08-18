@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC  -g -O0 -shared -Wl,-soname,librknn_engine.so -o librknn_engine.so CMakeFiles/rknn_engine.dir/rknn_engine_autogen/mocs_compilation.cpp.o CMakeFiles/rknn_engine.dir/src/engine/rknn_engine.cpp.o   -L/lib/Linux  -Wl,-rpath,/lib/Linux:/userdata/code/librknn_api/aarch64 /userdata/code/librknn_api/aarch64/librknnrt.so 

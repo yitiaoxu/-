@@ -1,0 +1,740 @@
+## mainwindow.cpp
+
+### rgb565_to_rgb888_local()*
+
+- 把一段 RGB565 格式的图像像素数据，转换成 RGB888 格式。
+- 输入是 `image565`（每个像素 16 位），输出到 `image888`（每个像素 3 字节：R/G/B 各 8 位）。
+
+```
+void rgb565_to_rgb888_local(const uint16_t *image565, uint8_t *image888, size_t num_pixels) {
+    for (size_t i = 0; i < num_pixels; ++i) {
+        uint16_t pixel = image565[i];
+        uint8_t r = ((pixel >> 11) & 0x1F) << 3;
+        uint8_t g = ((pixel >> 5) & 0x3F) << 2;
+        uint8_t b = (pixel & 0x1F) << 3;
+        image888[3 * i] = r;
+        image888[3 * i + 1] = g;
+        image888[3 * i + 2] = b;
+    }
+}
+```
+
+
+
+### InferenceThread::InferenceThread/~InferenceThread()*
+
+InferenceThread的构造函数和析构函数，
+
+构造函数：
+
+1) 初始化列表先执行
+
+```
+: QThread(parent), keep_running(false), current_input_type(INPUT_CAMERA),
+
+  camera_index(0), yolo11_detector(nullptr), yolo11_thread_pool(nullptr), lprnet_ready(false)
+```
+
+这里在进入 `{}` 前完成基础状态设置：
+
+- 调用父类 `QThread(parent)`，把这个对象作为 Qt 线程对象正确构造。
+- `keep_running(false)`：线程初始不跑，避免刚创建就进入循环。
+- `current_input_type(INPUT_CAMERA)`：默认输入源设为摄像头。
+- `camera_index(0)`：默认摄像头索引 0。
+- `yolo11_detector(nullptr)` / `yolo11_thread_pool(nullptr)`：指针先置空，保证后续析构里可安全判空删除。
+- `lprnet_ready(false)`：LPRNet 默认未就绪，只有初始化成功才置 `true`。
+
+2) 设置模型路径与线程数
+
+std::string yolo_model_path = "./weights/yolov11_3568.rknn";
+
+std::string lprnet_model_path = "./weights/lprnet_rk3568.rknn";
+
+int numThreads = 4;
+
+作用是准备后续加载参数：
+
+- YOLO 检测模型路径
+- 车牌识别模型路径
+- YOLO 线程池工作线程数
+
+3) 初始化 YOLO 检测器 + 线程池
+
+yolo11_detector = new Yolov11Custom(); 
+
+if (yolo11_detector->LoadModel(yolo_model_path.c_str()) == NN_SUCCESS) {
+
+​    yolo11_thread_pool = new Yolov11ThreadPool();
+
+​    yolo11_thread_pool->setUp(yolo_model_path, numThreads);
+
+}
+
+逻辑含义：
+
+- 先创建单个检测器对象 `Yolov11Custom`。
+- 尝试加载 YOLO 模型，只有加载成功（`NN_SUCCESS`）才继续：
+  - 创建 `Yolov11ThreadPool`
+  - 用同一个模型路径 + 线程数初始化线程池
+
+也就是：线程池依赖模型加载成功，失败就不建池，避免无效资源占用或后续崩溃。
+
+4) 初始化 LPRNet 上下文
+
+memset(&lprnet_ctx, 0, sizeof(rknn_app_context_t));
+
+if (init_lprnet_model(lprnet_model_path.c_str(), &lprnet_ctx) == 0) {
+
+​    lprnet_ready = true;
+
+}
+
+先把 `lprnet_ctx` 清零，防止脏数据；然后尝试加载 LPRNet：
+
+- 返回 0 表示初始化成功 -> `lprnet_ready = true`
+- 否则保持 `false`，表示车牌识别功能不可用或未就绪
+
+析构函数：
+
+1) 先停线程，再做资源释放
+
+stop();
+
+wait();
+
+这两步非常关键：
+
+- `stop()`：通知线程退出主循环
+- `wait()`：阻塞等待线程真正结束
+
+为什么先做这个？因为线程还在跑时就删模型/线程池，会出现并发访问已释放内存的问题（高风险崩溃）。
+
+2) 释放 YOLO 检测器对象
+
+if (yolo11_detector) { delete yolo11_detector; yolo11_detector = nullptr; }
+
+判空后删除，删除后置空，避免悬空指针。
+
+3) 停止并释放 YOLO 线程池
+
+if (yolo11_thread_pool) {
+
+​    yolo11_thread_pool->stopAll();
+
+​    delete yolo11_thread_pool;
+
+​    yolo11_thread_pool = nullptr;
+
+}
+
+这里比普通 `delete` 多一步 `stopAll()`，说明线程池内部可能还有工作线程，需要先停干净再释放对象。
+
+4) 释放 LPRNet 模型资源
+
+if (lprnet_ready) {
+
+​    release_lprnet_model(&lprnet_ctx);
+
+​    lprnet_ready = false;
+
+}
+
+只有在成功初始化过时才释放，避免对未初始化上下文做无效释放。
+
+
+
+### setInputCamera(int cam_index)
+
+- 把输入源切到摄像头：`current_input_type = INPUT_CAMERA`
+- 同时设置要使用的摄像头编号：`camera_index = cam_index`
+
+### setInputImage(const QString& path)*
+
+- 把输入源切到单张图片：`current_input_type = INPUT_IMAGE`
+- 记录图片路径到 `file_path`
+
+### setInputVideo(const QString& path)
+
+- 把输入源切到本地视频：`current_input_type = INPUT_VIDEO`
+- 记录视频路径到 `file_path`
+
+### setInputPCIe()*
+
+- 把输入源切到 PCIe 数据流：`current_input_type = INPUT_PCIE`
+- 不需要文件路径或摄像头编号，所以只改输入类型
+
+### stop()*
+
+- 把运行标志置为 `false`：`keep_running = false`
+- 让 `run()/process...` 里的循环条件失效，从而请求线程停止
+
+
+
+### InferenceThread::ensureOutputDirectory()
+
+- 确保当前工作目录下存在一个名为 `output` 的文件夹；
+- 如果不存在，就创建它。
+
+
+
+### QImage InferenceThread::matToQImage(**const** cv::Mat**&** mat)*
+
+```
+QImage InferenceThread::matToQImage(const cv::Mat& mat) {
+    return QImage((const unsigned char*)(mat.data), mat.cols, mat.rows, mat.step, QImage::Format_BGR888).copy();
+}
+OpenCV 图像到 Qt 图像的转换函数
+```
+
+- 作用：把 `cv::Mat`（BGR）转成 `QImage::Format_BGR888`，并用 `.copy()` 拷贝一份独立内存，方便发给 Qt UI 显示，该函数返回一个Qimage变量
+
+
+
+### QString InferenceThread::detectPlateColor(**const** cv::Mat**&** plate_img)*
+
+```
+QString InferenceThread::detectPlateColor(const cv::Mat& plate_img) {
+    if (plate_img.empty()) return "Unknown";
+    cv::Mat hsv, mask_b, mask_y, mask_g;
+    cv::cvtColor(plate_img, hsv, cv::COLOR_BGR2HSV);
+    cv::inRange(hsv, cv::Scalar(100, 50, 50), cv::Scalar(124, 255, 255), mask_b);
+    cv::inRange(hsv, cv::Scalar(15, 50, 50), cv::Scalar(34, 255, 255), mask_y);
+    cv::inRange(hsv, cv::Scalar(35, 50, 50), cv::Scalar(85, 255, 255), mask_g);
+
+    int b_pts = cv::countNonZero(mask_b);
+    int y_pts = cv::countNonZero(mask_y);
+    int g_pts = cv::countNonZero(mask_g);
+    int max_pts = std::max({b_pts, y_pts, g_pts});
+    
+    if (max_pts < 50) return "Unknown";
+    if (max_pts == b_pts) return "蓝色";
+    if (max_pts == y_pts) return "黄色";
+    return "绿色";
+}
+基于 HSV 阈值的颜色分类函数
+```
+
+把车牌图转 HSV 后分别做蓝/黄/绿掩码统计，哪个像素点最多就判成哪种颜色；像素太少（`max_pts < 50`）返回 `Unknown`，返回一个字符串
+
+
+
+### QString InferenceThread::recognizePlateText(**const** cv::Mat**&** plate_img)*
+
+```
+QString InferenceThread::recognizePlateText(const cv::Mat& plate_img) {
+    if (!lprnet_ready || plate_img.empty()) return "识别失败";
+    cv::Mat resized;
+    cv::resize(plate_img, resized, cv::Size(MODEL_WIDTH, MODEL_HEIGHT));
+    
+    lprnet_result result;
+    if (inference_lprnet_model(&lprnet_ctx, resized, &result) != 0) return "推理错误";
+    return QString::fromStdString(result.plate_name);
+}
+调用 LPRNet 的车牌字符识别函数
+```
+
+先检查模型是否就绪和输入是否有效，再把车牌图缩放到模型输入尺寸，调用 `inference_lprnet_model` 推理，最后把识别结果 `plate_name` 转成 `QString` 返回
+
+
+
+### InferenceThread::drawChineseTextAndBox(cv::Mat**&** img, **const** cv::Rect**&** box, **const** QString**&** text, **const** cv::Scalar**&** color)*
+
+```
+void InferenceThread::drawChineseTextAndBox(cv::Mat& img, const cv::Rect& box, const QString& text, const cv::Scalar& color) {
+    cv::Mat rgb;
+    cv::cvtColor(img, rgb, cv::COLOR_BGR2RGB);
+    QImage qimg(rgb.data, rgb.cols, rgb.rows, rgb.step, QImage::Format_RGB888);
+    QPainter painter(&qimg);
+    painter.setRenderHint(QPainter::Antialiasing);
+    QColor qColor(color[2], color[1], color[0]); 
+    
+    painter.setPen(QPen(qColor, 3));
+    painter.drawRect(box.x, box.y, box.width, box.height);
+    QFont font("Microsoft YaHei", 18, QFont::Bold);
+    painter.setFont(font);
+    QFontMetrics fm(font);
+    
+    int w = fm.horizontalAdvance(text), h = fm.height();
+    painter.setBrush(qColor);
+    painter.setPen(Qt::NoPen);
+    painter.drawRect(box.x, box.y - h - 8, w + 10, h + 8);
+    painter.setPen(QColor(0, 0, 0)); 
+    painter.drawText(box.x + 5, box.y - 5, text);
+    painter.end();
+    cv::cvtColor(rgb, img, cv::COLOR_RGB2BGR);
+}
+图片加工，在原始的图片上添加画框、文本
+```
+
+- 在一帧 OpenCV 图像 `img` 上，给检测框 `box` 画框；
+- 在框上方画一个彩色文字底条；
+- 在底条里绘制中文文本 `text`（比如“蓝色 京A12345”）；
+- 最后把结果写回原图 `img`。
+
+
+
+### InferenceThread::run()*
+
+```
+void InferenceThread::run() {
+    if (!yolo11_detector || !yolo11_thread_pool || !lprnet_ready) {
+        emit showMessage("模型初始化失败");
+        return;
+    }
+    keep_running = true;
+    ensureOutputDirectory(); //确保输出目录存在
+
+//按照输入源分发处理逻辑
+	//图片
+    if (current_input_type == INPUT_IMAGE) processSingleImage();
+    //PCIe
+    else if (current_input_type == INPUT_PCIE) processPCIeStream();
+    //其它（摄像头/视频）
+    else processStream();
+    
+    emit showMessage("就绪");//处理完后发送“就绪”消息
+}
+```
+
+
+
+### InferenceThread::processPCIeStream()*PCIe图像输出
+
+
+
+```
+void InferenceThread::processPCIeStream() {
+    std::cout << "\n[PCIe] 尝试打开设备节点..." << std::endl;
+    int fd = -1;
+    const char* used_node = nullptr;
+    const char* pcie_nodes[] = {
+        "/dev/pango_pci_driver",
+        "/dev/xdma0_c2h_0",
+        "/dev/input/event0",
+        "/dev/input/event8"
+    };
+
+    for (const char* node : pcie_nodes) {
+        fd = open(node, O_RDWR);
+        if (fd >= 0) {
+            used_node = node;
+            break;
+        }
+    }
+    if (fd < 0) {
+        std::cerr << "[PCIe] 错误: 无法打开设备节点，errno="
+                  << errno << " (" << std::strerror(errno) << ")" << std::endl;
+        emit showMessage("无法打开 PCIe 设备");
+        return;
+    }
+    std::cout << "[PCIe] 设备节点打开成功: " << used_node << std::endl;
+```
+
+根据定义的节点数组，一次对节点进行打开操作，如果成功打开则记录成功节点，并退出循环，用于打开PCIe的设备节点。如果列表中的节点都无法打开则报错。
+
+```
+    int width = 1280, height = 720;//设置每一帧的分辨率
+    std::vector<uint8_t> image_buf_temp(width * height * 2);//根据每一帧的分辨率来设置缓冲区的大小
+    std::vector<uint8_t> image_buf_888(width * height * 3);//采用双缓冲区一用来存储原始输入的数据一个用来存储转换过后的数据
+
+    DMA_OPERATION dma_operation; //DMA读写控制结构体，后面会用它和PCIe驱动交互
+
+    int job_cnt = 0//已提交推理任务数, result_cnt = 0//以取回结果数, numThreads = 4//并行推理线程数上限;
+    //任务计数与并发控制参数
+    std::queue<cv::Mat> frame_queue;//帧队列，用来缓存“已提交但未出结果”的图像，便于结果回来后对应处理
+    int64 fps_start_time = cv::getTickCount();//记录 FPS 统计起始时间戳
+```
+
+先把图像缓存、DMA控制、任务计数和FPS计时器全部准备好，后面循环才能稳定跑起来。
+
+```
+typedef struct _DMA_OPERATION_ {
+    unsigned int current_len; //当前 DMA 传输长度（一次操作要传多少数据）
+    unsigned int offset_addr;//偏移地址（本次 DMA 操作的地址偏移）
+    unsigned int cmd;//命令字段（用于区分具体 DMA 操作命令）
+    DMA_DATA data;//具体数据区（读写缓冲等），类型是另一个结构体 DMA_DATA
+} DMA_OPERATION;
+```
+
+ **job_cnt = 0//已提交推理任务数,** 
+
+**result_cnt = 0//以取回结果数, **
+
+**numThreads = 4//并行推理线程数上限;**
+
+```
+    while (keep_running) {
+    	//控制并发线路小于等于4
+        if (job_cnt - result_cnt < numThreads) {
+        //设置DMA参数并清空缓存
+            dma_operation.current_len = 2560 / 4;
+            dma_operation.offset_addr = 0;
+            memset(dma_operation.data.write_buf, 0, DMA_MAX_PACKET_SIZE);
+            memset(dma_operation.data.read_buf, 0, DMA_MAX_PACKET_SIZE);
+```
+
+
+
+此处说明`ioctl(fd, PCI_MAP_ADDR_CMD, &dma_operation)`
+
+- `PCI_MAP_ADDR_CMD`（编号 2）
+  - 开始一轮 DMA 前的“映射/准备”命令
+  - 常用于让驱动建立地址映射或准备访问上下文
+- `PCI_DMA_WRITE_CMD`（编号 5）
+  - 触发一次 DMA 传输动作
+  - 在你的循环里每行都会调用一次，等价于“开始搬这一行数据”
+- `PCI_READ_FROM_KERNEL_CMD`（编号 6）
+  - 从驱动/内核缓冲区把数据取回到用户态结构体里
+  - 你的代码随后 `memcpy` 到整帧缓存
+- `PCI_UMAP_ADDR_CMD`（编号 7）
+  - 一轮传输结束后的“取消映射/收尾”命令
+  - 用于释放映射或清理状态
+
+**逐行把设备侧（DDR 数据）搬到 ARM 端用户态原始缓存 `image_buf_temp`**
+
+```
+            ioctl(fd, PCI_MAP_ADDR_CMD, &dma_operation);//开始本轮 DMA 读取前的准备动作
+            for (int i = 0; i < height; i++)//按行读取图像数据
+            {
+                memset(dma_operation.data.read_buf, 0, DMA_MAX_PACKET_SIZE);//清空本次接收缓存，避免脏数据
+                ioctl(fd, PCI_DMA_WRITE_CMD, &dma_operation);//出发一次DMA传输动作
+                for (volatile int k = 0; k < 2500; k++); //短延时，等硬件/驱动准备好数据
+                ioctl(fd, PCI_READ_FROM_KERNEL_CMD, &dma_operation);//把这一行数据从内核侧读到 dma_operation.data.read_buf
+                memcpy(image_buf_temp.data() + i * 2560, dma_operation.data.read_buf, 2560);//拷贝到整帧缓存对应行位置
+            }
+            ioctl(fd, PCI_UMAP_ADDR_CMD, &dma_operation);//本帧读完后做收尾，释放/取消映射资源
+```
+
+
+
+**先做像素格式转换，再做通道顺序转换，得到标准 BGR 帧**
+
+```
+           //把 image_buf_temp 里的 RGB565（16位）像素，转换成 image_buf_888 里的 RGB888（24位）像素
+           rgb565_to_rgb888_local((uint16_t*)image_buf_temp.data(), image_buf_888.data(), width * height);
+           //将image_buf_888 这块内存转换成OpenCV 图像对象 img（3通道 8位）
+            cv::Mat img(height, width, CV_8UC3, image_buf_888.data());
+           //声明最终输出图 frame
+            cv::Mat frame;
+           //把 img 从 RGB 顺序转成 BGR 顺序，得到 frame
+            cv::cvtColor(img, frame, cv::COLOR_RGB2BGR); 
+```
+
+
+
+```
+            yolo11_thread_pool->submitTask(frame, job_cnt++);//把当前帧 frame 提交给 YOLO 线程池做异步推理
+            frame_queue.push(frame.clone());//把当前帧深拷贝后压入队列保存
+```
+
+
+
+```
+        std::vector<Detection> objects;//声明一个检测结果容器
+```
+
+//if只有满足当某一个线路的结果刚好推理完了输出的时候
+
+```
+        if (result_cnt < job_cnt && yolo11_thread_pool->getTargetResultNonBlock(objects, result_cnt) == NN_SUCCESS) {
+```
+
+
+
+//获取首帧，用于后续画框
+
+```
+            cv::Mat draw_frame = frame_queue.front(); //取队首帧，赋给 draw_frame，作为后续画框/标注的目标图像
+            frame_queue.pop();//首帧被使用后就消除
+```
+
+
+
+//这个 `for` 循环是在对当前帧的每一个检测框做完整后处理。可以概括为 5 件事：筛选、修框、裁剪、识别、标注。
+
+```
+            for (auto &obj : objects) {
+            //筛选无效目标
+                if (obj.confidence < 0.15) continue;
+                cv::Rect safe_box = obj.box & cv::Rect(0, 0, draw_frame.cols, draw_frame.rows);
+                if (safe_box.area() <= 0) continue;
+			//调整检测框给识别模型
+				//先按 1.1 倍扩框
+                float target_ratio = (float)MODEL_WIDTH / MODEL_HEIGHT; 
+                int cx = safe_box.x + safe_box.width / 2;
+                int cy = safe_box.y + safe_box.height / 2;
+                int new_h = safe_box.height * 1.1; 
+                int new_w = safe_box.width * 1.1;
+				//再按 MODEL_WIDTH/MODEL_HEIGHT 把框改成目标比例
+                if ((float)new_w / new_h < target_ratio) new_w = static_cast<int>(new_h * target_ratio);
+                else new_h = static_cast<int>(new_w / target_ratio);
+				//重新限制在图像范围内，防止越界
+                int new_x = std::max(0, cx - new_w / 2);
+                int new_y = std::max(0, cy - new_h / 2);
+                safe_box = cv::Rect(new_x, new_y, std::min(draw_frame.cols - new_x, new_w), std::min(draw_frame.rows - new_y, new_h));
+			//裁剪车牌区域并识别
+                cv::Mat plate_crop = draw_frame(safe_box);
+                QString plate_color = detectPlateColor(plate_crop);
+                QString plate_text = recognizePlateText(plate_crop);
+			//打印结果日志
+                std::cout << "         [检测结果] 车牌: " << plate_text.toStdString() 
+                          << " | 颜色: " << plate_color.toStdString() 
+                          << " | 置信度: " << obj.confidence << std::endl;
+			//按颜色画框和标签
+                cv::Scalar box_color;
+                if (plate_color == "蓝色") box_color = cv::Scalar(255, 0, 0); 
+                else if (plate_color == "黄色") box_color = cv::Scalar(0, 255, 255);
+                else if (plate_color == "绿色") box_color = cv::Scalar(0, 255, 0);
+                else box_color = cv::Scalar(255, 255, 255); 
+
+                QString label_str = QString("[%1] %2 (%3)").arg(obj.confidence, 0, 'f', 2).arg(plate_text).arg(plate_color);
+                drawChineseTextAndBox(draw_frame, safe_box, label_str, box_color);
+            }
+```
+
+
+
+每 10 帧更新一次整体处理速度，方便观察 PCIe 流处理性能
+
+```
+            if (result_cnt % 10 == 0) {
+                int64 fps_end_time = cv::getTickCount();
+                double fps = 10.0 * cv::getTickFrequency() / (fps_end_time - fps_start_time);
+                fps_start_time = fps_end_time; 
+                std::cout << "[PCIe] 实时整体帧率: " << fps << " FPS\r" << std::flush;
+            }
+```
+
+
+
+有结果就推送显示并记账，没结果就短暂休眠等下一轮。
+
+```
+            emit frameReady(matToQImage(draw_frame));//发送Qimage信号会被槽函数接收，更新图片
+            result_cnt++;
+        } else {
+            usleep(1000);
+        }
+```
+
+
+
+当这次 PCIe 处理流程结束时关闭设备句柄
+
+```
+    close(fd);
+    std::cout << "\n[PCIe] 流读取安全关闭" << std::endl;
+```
+
+
+
+### InferenceThread::processSingleImage() 直接读取图片
+
+
+
+先告诉用户“开始处理”，再读图，读不到就立即报错退出。
+
+```
+    emit showMessage("正在处理图片...");
+    cv::Mat frame = cv::imread(file_path.toStdString());//用 OpenCV 按 file_path 读取图片，得到 frame
+    if (frame.empty()) //判断读取是否失败
+    {
+        emit showMessage("无法读取图片！");
+        return;
+    }
+```
+
+
+
+**先投递单图推理，再以低开销轮询方式等结果，支持中途安全退出。**
+
+```
+    int64 t_start = cv::getTickCount();//记录开始时间，后面可用于统计这张图的处理耗时/FPS
+    yolo11_thread_pool->submitTask(frame.clone(), 0);//把当前图片提交到 YOLO 线程池，任务ID设为0用 clone() 做深拷贝，避免原图被后续操作影响
+    
+    std::vector<Detection> objects;//创建容器用于接收检测结果
+    while (yolo11_thread_pool->getTargetResultNonBlock(objects, 0) != NN_SUCCESS && keep_running) {
+        usleep(1000);
+    }//非阻塞轮询等待任务0的结果
+
+    if (!keep_running) return;//如果等待过程中被要求停止，就直接退出，不再继续后处理
+```
+
+
+
+同上的标注图片，有一些特殊但不多
+
+```
+    for (auto &obj : objects) {
+        if (obj.confidence < 0.15) continue; 
+        cv::Rect safe_box = obj.box & cv::Rect(0, 0, frame.cols, frame.rows);
+        if (safe_box.area() <= 0) continue;
+
+        float target_ratio = (float)MODEL_WIDTH / MODEL_HEIGHT; 
+        int cx = safe_box.x + safe_box.width / 2;
+        int cy = safe_box.y + safe_box.height / 2;
+        int new_h = safe_box.height * 1.1; 
+        int new_w = safe_box.width * 1.1;
+
+        if ((float)new_w / new_h < target_ratio) {
+            new_w = static_cast<int>(new_h * target_ratio);
+        } else {
+            new_h = static_cast<int>(new_w / target_ratio);
+        }
+
+        int new_x = std::max(0, cx - new_w / 2);
+        int new_y = std::max(0, cy - new_h / 2);
+        new_w = std::min(frame.cols - new_x, new_w);
+        new_h = std::min(frame.rows - new_y, new_h);
+
+        safe_box = cv::Rect(new_x, new_y, new_w, new_h);
+        if (safe_box.area() <= 0) continue;
+
+        cv::Mat plate_crop = frame(safe_box);
+        QString plate_color = detectPlateColor(plate_crop);
+        QString plate_text = recognizePlateText(plate_crop);
+
+        cv::Scalar box_color;
+        if (plate_color == "蓝色") box_color = cv::Scalar(255, 0, 0); 
+        else if (plate_color == "黄色") box_color = cv::Scalar(0, 255, 255);
+        else if (plate_color == "绿色") box_color = cv::Scalar(0, 255, 0);
+        else box_color = cv::Scalar(255, 255, 255); 
+
+        QString label_str = QString("[%1] %2 (%3)").arg(obj.confidence, 0, 'f', 2).arg(plate_text).arg(plate_color);
+        drawChineseTextAndBox(frame, safe_box, label_str, box_color);
+    }
+        int64 t_end = cv::getTickCount();
+    double time_ms = (t_end - t_start) * 1000.0 / cv::getTickFrequency();
+    cv::putText(frame, cv::format("Cost: %.1f ms", time_ms), cv::Point(15, 35), cv::FONT_HERSHEY_SIMPLEX, 1.0, cv::Scalar(0, 0, 255), 2);
+
+    QString out_file = QString("output/image_%1.jpg").arg(QDateTime::currentDateTime().toString("yyyyMMdd_HHmmss"));
+    cv::imwrite(out_file.toStdString(), frame);
+    
+    emit frameReady(matToQImage(frame));
+    emit showMessage("图片已保存至: " + out_file);
+```
+
+
+
+
+
+# 以下为修改内容
+
+### MainWindow::MainWindow()/~MainWindow()
+
+构造函数完成 UI、线程和信号槽 wiring，析构函数保持简洁。
+
+
+
+### MainWindow::setupUI()
+
+```
+oid MainWindow::setupUI() {
+    this->setWindowTitle("VisionAI PCIe 测试工具");
+    this->resize(1024, 768);
+    this->setStyleSheet("QMainWindow { background-color: #1e1e2e; } QPushButton { background-color: #89b4fa; color: #11111b; border: none; border-radius: 6px; padding: 12px 20px; font-weight: bold; font-size: 14px;} QPushButton:hover { background-color: #b4befe; } QPushButton:pressed { background-color: #74c7ec; } QLabel#DisplayLabel { background-color: #181825; color: #a6adc8; border: 2px dashed #45475a; border-radius: 10px; font-size: 18px;} QLabel#StatusLabel { color: #a6adc8; font-size: 13px; padding: 5px;}");
+
+    displayLabel = new QLabel("点击下方按钮选择输入源");
+    displayLabel->setObjectName("DisplayLabel");
+    displayLabel->setAlignment(Qt::AlignCenter);
+    displayLabel->setMinimumSize(800, 500);
+
+    statusLabel = new QLabel("状态: 就绪");
+    statusLabel->setObjectName("StatusLabel");
+
+    btnCamera = new QPushButton("打开摄像头");
+    btnImage = new QPushButton("打开图片");
+    btnVideo = new QPushButton("打开本地视频");
+    btnPCIe = new QPushButton("打开 PCIe 裸流");
+
+    QHBoxLayout *btnLayout = new QHBoxLayout();
+    btnLayout->addStretch();
+    btnLayout->addWidget(btnCamera);
+    btnLayout->addWidget(btnImage);
+    btnLayout->addWidget(btnVideo);
+    btnLayout->addWidget(btnPCIe);
+    btnLayout->addStretch();
+
+    QVBoxLayout *mainLayout = new QVBoxLayout();
+    mainLayout->setContentsMargins(20, 20, 20, 10);
+    mainLayout->addWidget(displayLabel, 1);
+    mainLayout->addLayout(btnLayout);
+    mainLayout->addWidget(statusLabel);
+
+    QWidget *centralWidget = new QWidget(this);
+    centralWidget->setLayout(mainLayout);
+    setCentralWidget(centralWidget);
+}
+```
+
+
+
+### MainWindow::closeEvent（）
+
+```
+void MainWindow::closeEvent(QCloseEvent *event) {
+    if (inferenceThread->isRunning()) {
+        inferenceThread->stop();
+        inferenceThread->wait();
+    }
+    event->accept();
+}
+```
+
+
+
+### MainWindow::openImage()
+
+```
+void MainWindow::openImage() {
+    QString fileName = QFileDialog::getOpenFileName(this, "选择测试图片", "", "Images (*.png *.jpg *.jpeg)");
+    if (!fileName.isEmpty()) {
+        if (inferenceThread->isRunning()) { inferenceThread->stop(); inferenceThread->wait(); }
+        inferenceThread->setInputImage(fileName);
+        inferenceThread->start(); //启动一个新线程；在线程启动后自动执行你在 InferenceThread 里重写的 run() 函数
+    }
+}
+```
+
+
+
+### MainWindow::openPCIe()
+
+```
+void MainWindow::openPCIe() {
+    if (inferenceThread->isRunning()) { 
+        inferenceThread->stop(); 
+        inferenceThread->wait(); 
+    }
+    inferenceThread->setInputPCIe();//启动一个新线程；在线程启动后自动执行你在 InferenceThread 里重写的 run() 函数
+    inferenceThread->start();
+}
+```
+
+
+
+### MainWindow::updateFrame(QImage image)*
+
+接收QImage image信号
+
+```
+void MainWindow::updateFrame(QImage image) {
+    displayLabel->setPixmap(
+        QPixmap::fromImage(image)//把传入的 QImage 转成 QPixmap
+            .scaled(displayLabel->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation)//改变图片大小
+    );//把缩放后的图设置为最新显示的一帧
+}
+```
+
+
+
+### MainWindow::updateStatus(QString msg)
+
+接收QString msg信号
+
+这个函数是主界面的“状态栏更新槽函数”，作用很直接：把后台传来的状态文字显示到界面上。
+
+```
+void MainWindow::updateStatus(QString msg) { statusLabel->setText("状态: " + msg); }
+```
+

@@ -1,0 +1,12 @@
+/userdata/code/build/CMakeFiles/nn_process.dir
+/userdata/code/build/CMakeFiles/rknn_engine.dir
+/userdata/code/build/CMakeFiles/yolov11_lib.dir
+/userdata/code/build/CMakeFiles/draw_lib.dir
+/userdata/code/build/CMakeFiles/vision_qt_demo.dir
+/userdata/code/build/CMakeFiles/edit_cache.dir
+/userdata/code/build/CMakeFiles/rebuild_cache.dir
+/userdata/code/build/CMakeFiles/nn_process_autogen.dir
+/userdata/code/build/CMakeFiles/rknn_engine_autogen.dir
+/userdata/code/build/CMakeFiles/yolov11_lib_autogen.dir
+/userdata/code/build/CMakeFiles/draw_lib_autogen.dir
+/userdata/code/build/CMakeFiles/vision_qt_demo_autogen.dir

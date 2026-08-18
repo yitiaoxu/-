@@ -1,0 +1,95 @@
+##### Written on 2026/05/05 21:46:33 ###############################
+
+
+##### INFO ##################################################
+
+Current device : 
+	PG2L100H-6FBG484
+
+Top Module : 
+	image_pcie_capture
+
+Constraint File(s) : 
+	C:/Users/DELL/Desktop/FPGA5.7/FPGA1.0/project/project.fdc
+
+##### SUMMARY ######################################################
+
+Found 0 error(s), 15 critical warning(s), 11 warning(s), out of 645 constraint(s)
+
+
+Inapplicable constraints(except overwritten constraints):
+********************************************
+
+define_attribute {p:board_rst_n} {PAP_IO_LOC} {M15}        
+	C: ConstraintEditor-2002: [C:/Users/DELL/Desktop/FPGA5.7/FPGA1.0/project/project.fdc(line number: 487)] | Port board_rst_n has been placed at location M15, whose type is share pin.
+
+define_attribute {p:perst_n} {PAP_IO_LOC} {M16}
+	C: ConstraintEditor-2002: [C:/Users/DELL/Desktop/FPGA5.7/FPGA1.0/project/project.fdc(line number: 546)] | Port perst_n has been placed at location M16, whose type is share pin.
+
+define_attribute {p:cmos2_data[7]} {PAP_IO_LOC} {AB18}
+	C: ConstraintEditor-2002: [C:/Users/DELL/Desktop/FPGA5.7/FPGA1.0/project/project.fdc(line number: 645)] | Port cmos2_data[7] has been placed at location AB18, whose type is share pin.
+
+define_attribute {p:cmos2_data[6]} {PAP_IO_LOC} {P17}
+	C: ConstraintEditor-2002: [C:/Users/DELL/Desktop/FPGA5.7/FPGA1.0/project/project.fdc(line number: 650)] | Port cmos2_data[6] has been placed at location P17, whose type is share pin.
+
+define_attribute {p:cmos2_data[3]} {PAP_IO_LOC} {P15}
+	C: ConstraintEditor-2002: [C:/Users/DELL/Desktop/FPGA5.7/FPGA1.0/project/project.fdc(line number: 665)] | Port cmos2_data[3] has been placed at location P15, whose type is share pin.
+
+define_attribute {p:cmos2_data[2]} {PAP_IO_LOC} {R16}
+	C: ConstraintEditor-2002: [C:/Users/DELL/Desktop/FPGA5.7/FPGA1.0/project/project.fdc(line number: 670)] | Port cmos2_data[2] has been placed at location R16, whose type is share pin.
+
+define_attribute {p:cmos2_data[0]} {PAP_IO_LOC} {U17}
+	C: ConstraintEditor-2002: [C:/Users/DELL/Desktop/FPGA5.7/FPGA1.0/project/project.fdc(line number: 680)] | Port cmos2_data[0] has been placed at location U17, whose type is share pin.
+
+define_attribute {p:cmos1_scl} {PAP_IO_LOC} {R14}
+	C: ConstraintEditor-2002: [C:/Users/DELL/Desktop/FPGA5.7/FPGA1.0/project/project.fdc(line number: 685)] | Port cmos1_scl has been placed at location R14, whose type is share pin.
+
+define_attribute {p:cmos1_sda} {PAP_IO_LOC} {P14}
+	C: ConstraintEditor-2002: [C:/Users/DELL/Desktop/FPGA5.7/FPGA1.0/project/project.fdc(line number: 692)] | Port cmos1_sda has been placed at location P14, whose type is share pin.
+
+define_attribute {p:cmos2_reset} {PAP_IO_LOC} {AA21}
+	C: ConstraintEditor-2002: [C:/Users/DELL/Desktop/FPGA5.7/FPGA1.0/project/project.fdc(line number: 720)] | Port cmos2_reset has been placed at location AA21, whose type is share pin.
+
+define_attribute {p:cmos1_pclk} {PAP_IO_LOC} {T18}
+	C: ConstraintEditor-2002: [C:/Users/DELL/Desktop/FPGA5.7/FPGA1.0/project/project.fdc(line number: 733)] | Port cmos1_pclk has been placed at location T18, whose type is share pin.
+
+define_attribute {p:cmos1_vsync} {PAP_IO_LOC} {W17}
+	C: ConstraintEditor-2002: [C:/Users/DELL/Desktop/FPGA5.7/FPGA1.0/project/project.fdc(line number: 738)] | Port cmos1_vsync has been placed at location W17, whose type is share pin.
+
+define_attribute {p:cmos2_href} {PAP_IO_LOC} {U18}
+	C: ConstraintEditor-2002: [C:/Users/DELL/Desktop/FPGA5.7/FPGA1.0/project/project.fdc(line number: 743)] | Port cmos2_href has been placed at location U18, whose type is share pin.
+
+define_attribute {p:cmos2_pclk} {PAP_IO_LOC} {P16}
+	C: ConstraintEditor-2002: [C:/Users/DELL/Desktop/FPGA5.7/FPGA1.0/project/project.fdc(line number: 748)] | Port cmos2_pclk has been placed at location P16, whose type is share pin.
+
+define_attribute {p:cmos2_vsync} {PAP_IO_LOC} {R17}
+	C: ConstraintEditor-2002: [C:/Users/DELL/Desktop/FPGA5.7/FPGA1.0/project/project.fdc(line number: 753)] | Port cmos2_vsync has been placed at location R17, whose type is share pin.
+
+
+Constraints with issues:
+********************************************
+
+
+Issues without commands:
+********************************************
+
+
+Unconstrained ports:
+********************************************
+
+W: ConstraintEditor-4019: Port Bus 'cmos1_data' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port Bus 'cmos3_data' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port Bus 'rxn' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port Bus 'rxp' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port Bus 'txn' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port Bus 'txp' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port 'cmos1_href' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port 'cmos3_href' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port 'cmos_init_done[2]' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port 'uart_rxd' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port 'uart_txd' unspecified I/O constraint.
+
+Constraints with matching wildcard expressions:
+********************************************
+
+

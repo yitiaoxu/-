@@ -1,0 +1,6 @@
+# Hashes of file build rules.
+7a687aaefd1cc9e55c696db249a8c508 CMakeFiles/draw_lib_autogen
+fc4dca77c901d0d13cb8c1a6e1329bb1 CMakeFiles/nn_process_autogen
+a83301d4fcc6116efdf198061bff5303 CMakeFiles/rknn_engine_autogen
+2110f71475d1e257105cd648f5118b87 CMakeFiles/vision_qt_demo_autogen
+e235221c59eda0ceffa95abeef10e6ef CMakeFiles/yolov11_lib_autogen

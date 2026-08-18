@@ -1,0 +1,48 @@
+模型训练
+
+```
+cd C:\Users\23694\Desktop\ziguang_project\code\code_1\LPRNet_Pytorch
+python LPRNet_Pytorch/train_LPRNet.py --class_num 75 --dropout_rate 0.0 --learning_rate 1e-4 --train_img_dirs "F:/CBLPRD_330K/train.txt" --test_img_dirs "F:/CBLPRD_330K/val.txt"
+```
+
+
+
+模型转换
+
+```
+//best.pth -> .onnx
+cd LPRNet_Pytorch
+python export_onnx.py
+//.onnx -> .rknn
+
+```
+
+
+
+模型调参
+
+```
+--learning_rate
+现在优化器是 AdamW，这是最敏感参数。默认 0.1 对 AdamW 来说通常偏大，常见可从 1e-3 ~ 3e-4 起试。
+--train_batch_size
+影响稳定性和显存占用。大 batch 更稳但更吃显存；小 batch 噪声大但有时泛化更好。
+--max_epoch
+决定训练总轮次，和学习率策略联动；数据量大时 15 轮可能不够。
+--img_size
+车牌识别对宽高敏感，改输入尺寸会影响特征表达与速度。
+--lpr_max_len
+标签最大长度，必须和你数据实际车牌长度匹配，否则会影响 CTC 学习与解码效果。
+--dropout_rate
+过拟合明显时可提高，欠拟合时可降低。
+--use_lr_schedule + --lr_schedule
+控制学习率分段衰减，通常有帮助。
+--use_ema + --ema_decay
+EMA 常能让验证精度更稳，推荐保持开启；ema_decay 常在 0.999 ~ 0.9999。
+--min_delta
+只影响“best 模型是否保存”的门槛，不影响反向传播本身；可减少“抖动式更新 best”。
+--num_workers
+只影响数据读取吞吐，GPU 吃不满时可调大。
+--test_interval / --save_interval
+影响评估/存盘频率，不影响最终收敛，但影响训练效率和监控粒度。
+```
+
