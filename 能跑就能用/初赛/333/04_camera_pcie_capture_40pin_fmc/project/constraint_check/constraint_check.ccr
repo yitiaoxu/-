@@ -1,0 +1,104 @@
+##### Written on 2026/04/23 12:25:02 ###############################
+
+
+##### INFO ##################################################
+
+Current device : 
+	PG2L100H-6FBG484
+
+Top Module : 
+	image_pcie_capture
+
+Constraint File(s) : 
+	C:/Users/23694/Desktop/ziguang_project/333/04_camera_pcie_capture_40pin_fmc/project/project.fdc
+
+##### SUMMARY ######################################################
+
+Found 0 error(s), 20 critical warning(s), 5 warning(s), out of 736 constraint(s)
+
+
+Inapplicable constraints(except overwritten constraints):
+********************************************
+
+define_attribute {p:board_rst_n} {PAP_IO_LOC} {M15}        
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/333/04_camera_pcie_capture_40pin_fmc/project/project.fdc(line number: 487)] | Port board_rst_n has been placed at location M15, whose type is share pin.
+
+define_attribute {p:perst_n} {PAP_IO_LOC} {M16}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/333/04_camera_pcie_capture_40pin_fmc/project/project.fdc(line number: 546)] | Port perst_n has been placed at location M16, whose type is share pin.
+
+define_attribute {p:cmos1_data[7]} {PAP_IO_LOC} {AB21}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/333/04_camera_pcie_capture_40pin_fmc/project/project.fdc(line number: 585)] | Port cmos1_data[7] has been placed at location AB21, whose type is share pin.
+
+define_attribute {p:cmos1_data[5]} {PAP_IO_LOC} {AB22}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/333/04_camera_pcie_capture_40pin_fmc/project/project.fdc(line number: 595)] | Port cmos1_data[5] has been placed at location AB22, whose type is share pin.
+
+define_attribute {p:cmos1_data[4]} {PAP_IO_LOC} {L13}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/333/04_camera_pcie_capture_40pin_fmc/project/project.fdc(line number: 600)] | Port cmos1_data[4] has been placed at location L13, whose type is share pin.
+
+define_attribute {p:cmos1_data[2]} {PAP_IO_LOC} {AB20}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/333/04_camera_pcie_capture_40pin_fmc/project/project.fdc(line number: 610)] | Port cmos1_data[2] has been placed at location AB20, whose type is share pin.
+
+define_attribute {p:cmos1_data[1]} {PAP_IO_LOC} {AA19}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/333/04_camera_pcie_capture_40pin_fmc/project/project.fdc(line number: 615)] | Port cmos1_data[1] has been placed at location AA19, whose type is share pin.
+
+define_attribute {p:cmos2_data[7]} {PAP_IO_LOC} {AB18}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/333/04_camera_pcie_capture_40pin_fmc/project/project.fdc(line number: 625)] | Port cmos2_data[7] has been placed at location AB18, whose type is share pin.
+
+define_attribute {p:cmos2_data[6]} {PAP_IO_LOC} {P17}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/333/04_camera_pcie_capture_40pin_fmc/project/project.fdc(line number: 630)] | Port cmos2_data[6] has been placed at location P17, whose type is share pin.
+
+define_attribute {p:cmos2_data[3]} {PAP_IO_LOC} {P15}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/333/04_camera_pcie_capture_40pin_fmc/project/project.fdc(line number: 645)] | Port cmos2_data[3] has been placed at location P15, whose type is share pin.
+
+define_attribute {p:cmos2_data[2]} {PAP_IO_LOC} {R16}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/333/04_camera_pcie_capture_40pin_fmc/project/project.fdc(line number: 650)] | Port cmos2_data[2] has been placed at location R16, whose type is share pin.
+
+define_attribute {p:cmos2_data[0]} {PAP_IO_LOC} {U17}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/333/04_camera_pcie_capture_40pin_fmc/project/project.fdc(line number: 660)] | Port cmos2_data[0] has been placed at location U17, whose type is share pin.
+
+define_attribute {p:cmos1_scl} {PAP_IO_LOC} {R14}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/333/04_camera_pcie_capture_40pin_fmc/project/project.fdc(line number: 665)] | Port cmos1_scl has been placed at location R14, whose type is share pin.
+
+define_attribute {p:cmos1_sda} {PAP_IO_LOC} {P14}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/333/04_camera_pcie_capture_40pin_fmc/project/project.fdc(line number: 672)] | Port cmos1_sda has been placed at location P14, whose type is share pin.
+
+define_attribute {p:cmos2_reset} {PAP_IO_LOC} {AA21}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/333/04_camera_pcie_capture_40pin_fmc/project/project.fdc(line number: 700)] | Port cmos2_reset has been placed at location AA21, whose type is share pin.
+
+define_attribute {p:cmos1_pclk} {PAP_IO_LOC} {T18}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/333/04_camera_pcie_capture_40pin_fmc/project/project.fdc(line number: 712)] | Port cmos1_pclk has been placed at location T18, whose type is share pin.
+
+define_attribute {p:cmos1_vsync} {PAP_IO_LOC} {W17}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/333/04_camera_pcie_capture_40pin_fmc/project/project.fdc(line number: 717)] | Port cmos1_vsync has been placed at location W17, whose type is share pin.
+
+define_attribute {p:cmos2_href} {PAP_IO_LOC} {U18}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/333/04_camera_pcie_capture_40pin_fmc/project/project.fdc(line number: 722)] | Port cmos2_href has been placed at location U18, whose type is share pin.
+
+define_attribute {p:cmos2_pclk} {PAP_IO_LOC} {P16}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/333/04_camera_pcie_capture_40pin_fmc/project/project.fdc(line number: 727)] | Port cmos2_pclk has been placed at location P16, whose type is share pin.
+
+define_attribute {p:cmos2_vsync} {PAP_IO_LOC} {R17}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/333/04_camera_pcie_capture_40pin_fmc/project/project.fdc(line number: 732)] | Port cmos2_vsync has been placed at location R17, whose type is share pin.
+
+
+Constraints with issues:
+********************************************
+
+
+Issues without commands:
+********************************************
+
+
+Unconstrained ports:
+********************************************
+
+W: ConstraintEditor-4019: Port Bus 'rxn' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port Bus 'rxp' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port Bus 'txn' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port Bus 'txp' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port 'cmos_init_done[2]' unspecified I/O constraint.
+
+Constraints with matching wildcard expressions:
+********************************************
+
+

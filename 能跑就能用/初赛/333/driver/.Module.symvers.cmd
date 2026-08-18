@@ -1,0 +1,1 @@
+cmd_/home/linaro/Desktop/pango_pcie_dma_allo/pcie_image_test/driver/Module.symvers :=  sed 's/ko$$/o/'  /home/linaro/Desktop/pango_pcie_dma_allo/pcie_image_test/driver/modules.order | scripts/mod/modpost      -o /home/linaro/Desktop/pango_pcie_dma_allo/pcie_image_test/driver/Module.symvers -e -i Module.symvers -T - 
