@@ -1,0 +1,5 @@
+中文字体 platech.ttf 请放在本目录：
+
+  fonts/platech.ttf
+
+可从 test_rknn_infer/fonts/ 或原 Chinese_license_plate 工程复制。

@@ -1,0 +1,68 @@
+# vsim -c -novopt work.ips2l_pcie_dma_tb -do "do probe_dma_timing.tcl; quit -f" -l probe_dma_timing.log 
+# Start time: 23:31:30 on Jul 12,2026
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# //  ModelSim SE-64 10.4 Dec  3 2014 
+# //
+# //  Copyright 1991-2014 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
+# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
+# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
+# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
+# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
+# //
+# Loading work.ips2l_pcie_dma_tb
+# Loading work.ips2l_pcie_dma
+# Loading work.ips2l_pcie_dma_rx_top
+# Loading work.ips2l_pcie_dma_tlp_rcv
+# Loading work.ips2l_pcie_dma_rx_cpld_wr_ctrl
+# Loading work.ipm_distributed_sdpram_v1_2
+# Loading work.ips2l_pcie_dma_wr_ctrl
+# Loading work.ips2l_pcie_dma_rx_mwr_wr_ctrl
+# Loading work.ips2l_pcie_dma_ram
+# Loading work.ipm2l_sdpram_v1_1_ips2l_pcie_dma_ram
+# Loading work.ips2l_pcie_dma_controller
+# Loading work.ips2l_pcie_dma_tx_top
+# Loading work.ips2l_pcie_dma_tx_cpld_rd_ctrl
+# Loading work.ips2l_pcie_dma_rd_ctrl
+# Loading work.pgs_pciex4_prefetch_fifo_v1_2
+# Loading work.ips2l_pcie_dma_tx_mwr_rd_ctrl
+# Loading work.ips2l_pcie_dma_cpld_tx_ctrl
+# Loading work.ips2l_pcie_dma_mrd_tx_ctrl
+# Loading work.ips2l_pcie_dma_mwr_tx_ctrl
+# Loading work.pcie_axis_host_bfm
+# Loading work.dma_write_data_src
+# Loading work.host_mem_scoreboard
+# Loading work.GTP_DRM18K_E1
+# Loading work.pgs_pciex4_fifo_v1_2
+# Loading work.ipm_distributed_sdpram_v1_2_distributed_fifo
+# Loading work.pgs_pciex4_fifo_ctrl
+# do probe_dma_timing.tcl
+# /ips2l_pcie_dma_tb
+# /ips2l_pcie_dma_tb/u_dut/u_ips2l_pcie_dma_controller
+# PASS: 01: no dma write req after reset
+# PASS: TC-DMA01: axis_slave2 idle
+# TIME=332000ps EVENT=BAR1_CMD_0x100_captured mwr32=1'h0 req=1'h0 req_cnt=0 sb_base=00000000 sb_done=1'h0 dma_done=1'h0 addr=00000000
+# TIME=348000ps EVENT=BAR1_CMD_0x100_captured mwr32=1'h0 req=1'h0 req_cnt=0 sb_base=00000000 sb_done=1'h0 dma_done=1'h0 addr=00000000
+# PASS: -DMA02: CMD only, no dma req yet
+# TIME=572000ps EVENT=BAR1_ADDR_0x110_captured mwr32=1'h0 req=1'h0 req_cnt=0 sb_base=00000000 sb_done=1'h0 dma_done=1'h0 addr=00000000
+# TIME=588000ps EVENT=mwr32_req_assert mwr32=1'h1 req=1'h0 req_cnt=0 sb_base=00000000 sb_done=1'h0 dma_done=1'h0 addr=00000040
+# TIME=588000ps EVENT=BAR1_ADDR_0x110_captured mwr32=1'h1 req=1'h0 req_cnt=0 sb_base=00000000 sb_done=1'h0 dma_done=1'h0 addr=00000040
+# TIME=604000ps EVENT=dma_status_done_set mwr32=1'h0 req=1'h0 req_cnt=0 sb_base=00000000 sb_done=1'h0 dma_done=1'h1 addr=a0000000
+# TIME=628000ps EVENT=first_dma_write_data_req mwr32=1'h0 req=1'h1 req_cnt=0 sb_base=00000000 sb_done=1'h0 dma_done=1'h1 addr=a0000000
+# TIME=908000ps EVENT=scoreboard_xfer_done mwr32=1'h0 req=1'h0 req_cnt=16 sb_base=00000000 sb_done=1'h1 dma_done=1'h1 addr=a0000000
+# PASS: TC-DMA03: dma req beat count
+# PASS: TC-DMA04: host mem base addr
+# PASS: all 16 payload beats match pattern
+# PASS: TC-DMA05: DMA_STATUS done bit
+# PASS: TC-DMA06: max dma write addr > 0
+# ALL TESTS PASSED
+# ** Note: $finish    : C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/tb/ips2l_pcie_dma_tb.v(181)
+#    Time: 81736 ns  Iteration: 0  Instance: /ips2l_pcie_dma_tb
+# End time: 23:31:32 on Jul 12,2026, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 1

@@ -1,0 +1,622 @@
+# Reading F:/Modelsim/tcl/vsim/pref.tcl
+# //  ModelSim SE-64 10.4 Dec  3 2014 
+# //
+# //  Copyright 1991-2014 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
+# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
+# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
+# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
+# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
+# //
+# do {run_behav_compile.tcl}
+# ** Error: (vlib-35) Failed to create directory "work".
+# 
+# File exists. (errno = EEXIST)
+# Model Technology ModelSim SE-64 vmap 10.4 Lib Mapping Utility 2014.12 Dec  3 2014
+# vmap -modelsim_quiet work ./work 
+# Modifying modelsim.ini
+# Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 20:37:48 on Jul 12,2026
+# vlog -f C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/sim/behav/1 
+# -- Compiling module image_pcie_capture
+# -- Compiling module ipm_distributed_sdpram_v1_2
+# -- Compiling module ips2l_pcie_dma
+# -- Compiling module ips2l_pcie_dma_controller
+# -- Compiling module ips2l_pcie_dma_cpld_tx_ctrl
+# -- Compiling module ips2l_pcie_dma_mrd_tx_ctrl
+# -- Compiling module ips2l_pcie_dma_mwr_tx_ctrl
+# -- Compiling module ips2l_pcie_dma_rd_ctrl
+# -- Compiling module ips2l_pcie_dma_rx_cpld_wr_ctrl
+# -- Compiling module ips2l_pcie_dma_rx_mwr_wr_ctrl
+# -- Compiling module ips2l_pcie_dma_rx_top
+# -- Compiling module ips2l_pcie_dma_tlp_rcv
+# -- Compiling module ips2l_pcie_dma_tlp_tx_mux
+# -- Compiling module ips2l_pcie_dma_tx_cpld_rd_ctrl
+# -- Compiling module ips2l_pcie_dma_tx_mwr_rd_ctrl
+# -- Compiling module ips2l_pcie_dma_tx_top
+# -- Compiling module ips2l_pcie_dma_wr_ctrl
+# -- Compiling module pgs_pciex4_prefetch_fifo_v1_2
+# -- Compiling module ipm_distributed_sdpram_v1_2_distributed_fifo
+# -- Compiling module pgs_pciex4_fifo_ctrl
+# -- Compiling module pgs_pciex4_fifo_v1_2
+# -- Compiling module ips2l_pcie_dma_ram
+# -- Compiling module ipm2l_sdpram_v1_1_ips2l_pcie_dma_ram
+# -- Compiling module lcd_driver
+# -- Compiling module axi4_ctrl
+# -- Compiling module cmos_8_16bit
+# -- Compiling module i2c_com
+# -- Compiling module ov5640_top
+# -- Compiling module power_on_delay
+# ** Error (suppressible): C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/power_on_delay.v(33): (vlog-2388) 'initial_en' already declared in this scope (power_on_delay).
+# 
+# -- Compiling module reg_config
+# -- Compiling module iic_dri
+# -- Compiling module ms72xx_ctl
+# ** Error (suppressible): C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/HDMI/ms72xx_ctl.v(49): (vlog-2388) 'init_over_rx' already declared in this scope (ms72xx_ctl).
+# 
+# -- Compiling module ms7200_ctl
+# -- Compiling module ms7210_ctl
+# -- Compiling module dma_read_bfm
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ips2l_rst_sync_v1_3.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_wrlvl_v1_0.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_wrcal_v1_7.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_wdata_path_adj_v1_10.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_upcal_v1_0.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_training_ctrl_v1_0.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_slice_rddata_align_v1_0.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_reset_ctrl_v1_3.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_rdcal_v1_10.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_main_ctrl_v1_10.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_init_v1_0.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_info_v1_0.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_gatecal_v1_10.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_gate_update_ctrl_v1_3.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_eyecal_v1_5.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_drift_ctrl_v1_0.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_dqsi_rdel_cal_v1_3.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_dqs_rddata_align_v1_10.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_dqs_gate_coarse_cal_v1_0.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_dll_update_ctrl_v1_3.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_dfi_v1_3.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_gpll_phase_v1_0.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_data_slice_wrlvl_v1_10.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_data_slice_wrcal_v1_10.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_data_slice_v1_10.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_data_slice_dqs_gate_cal_v1_10.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_cpd_ctrl_v1_3.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_cpd_lock_v1_0.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_control_path_adj_v1_10.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_calib_top_v1_10.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_calib_mux_v1_0.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_rst_debounce_v1_0.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_rst_clk_phase_adj_v1_0.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/pll/ips2l_ddrphy_gpll_v1_3.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/pll/ips2l_ddrphy_ppll_v1_0.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_apb_cross_v1_2.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_calib_delay_v1_2.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_cfg_apb_v1_2.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_dcd_bm_v1_2.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_dcd_rowaddr_v1_2.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_dcd_sm_v1_2.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_dcd_top_v1_2.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_dcp_back_ctrl_v1_2.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_dcp_buf_v1_2.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_dcp_buf_v1_2.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_dcp_out_v1_2.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_dcp_top_v1_2.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_dfi_v1_2.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_lp_v1_2.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_mrs_v1_2.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_prefetch_fifo_v1_2.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_rdatapath_v1_2.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_reg_fifo2_v1_2.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_ui_axi_v1_2a.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_wdatapath_v1_2.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_wdp_align_v1_2.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_wdp_dcp_v1_2.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_wrapper_v1_2b.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_com_timing_v1_2.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_tfaw_timing_v1_2.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_tfaw_v1_2.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_act2wr_pass_v1_2.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_act_pass_v1_2.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_pre_pass_v1_2.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_rd_pass_v1_2.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_ref_pass_v1_2.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_wr_pass_v1_2.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_trc_timing_v1_2.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/distributed_fifo/ips2l_distributed_fifo_v1_0.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/distributed_fifo/rtl/ips2l_distributed_fifo_ctr_v1_0.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/distributed_fifo/rtl/ips2l_distributed_fifo_v1_0_distributed_fifo_v1_0.vp(31): syntax error in protected region.
+# 
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/distributed_fifo/rtl/ips2l_distributed_sdpram_v1_0_distributed_fifo_v1_0.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ddr3
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/distributed_fifo/rtl/ips2l_distributed_sdpram_v1_0_distributed_fifo_v1_0.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ddr3_ddrphy_top
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/distributed_fifo/rtl/ips2l_distributed_fifo_v1_0_distributed_fifo_v1_0.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ddr3_slice_top_v1_10
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/distributed_fifo/rtl/ips2l_distributed_fifo_ctr_v1_0.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ipm2l_fifo_ctrl_v1_1_afifo_16i_128o_512
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/distributed_fifo/ips2l_distributed_fifo_v1_0.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ipm2l_sdpram_v1_10_afifo_16i_128o_512
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_wr_pass_v1_2.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ipm2l_fifo_v1_10_afifo_16i_128o_512
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_ref_pass_v1_2.vp(31): syntax error in protected region.
+# 
+# -- Compiling module afifo_16i_128o_512
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_rd_pass_v1_2.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ipm2l_fifo_ctrl_v1_1_afifo_128i_128o_512
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_pre_pass_v1_2.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ipm2l_sdpram_v1_10_afifo_128i_128o_512
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_act_pass_v1_2.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ipm2l_fifo_v1_10_afifo_128i_128o_512
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_act2wr_pass_v1_2.vp(31): syntax error in protected region.
+# 
+# -- Compiling module afifo_128i_128o_512
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_tfaw_v1_2.vp(31): syntax error in protected region.
+# 
+# -- Compiling module clk_1080p_gen
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_tfaw_timing_v1_2.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ips2l_pcie_apb_cross_v1_0
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_com_timing_v1_2.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ips2l_pcie_apb_mux_v1_0
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_wrapper_v1_2b.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ips2l_pcie_apb2dbi_v1_1
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_wdp_dcp_v1_2.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ips2l_pcie_cfg_init_v1_2b
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_wdp_align_v1_2.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ips2l_pcie_hard_ctrl_v1_2b
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_wdatapath_v1_2.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ips2l_pcie_pll_v1_0
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_ui_axi_v1_2a.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ips2l_pcie_soft_phy_v1_2c
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_rdatapath_v1_2.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ips2l_pcie_top_v1_2c
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_prefetch_fifo_v1_2.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ips2l_pcie_seio_intf_v1_2
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_mrs_v1_2.vp(31): syntax error in protected region.
+# 
+# -- Compiling module rcv_data_ram
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_lp_v1_2.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ipm2l_sdpram_v1_0_rcv_data_ram
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_dfi_v1_2.vp(31): syntax error in protected region.
+# 
+# -- Compiling module rcv_header_ram
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_dcp_top_v1_2.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ipm2l_sdpram_v1_0_rcv_header_ram
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_dcp_out_v1_2.vp(31): syntax error in protected region.
+# 
+# -- Compiling module retry_data_ram
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_dcp_buf_v1_2.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ipm2l_spram_v1_0_retry_data_ram
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_dcp_back_ctrl_v1_2.vp(31): syntax error in protected region.
+# 
+# -- Compiling module hsst_rst_cross_sync_v1_0
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_dcd_top_v1_2.vp(31): syntax error in protected region.
+# 
+# -- Compiling module hsst_rst_debounce_v1_0
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_dcd_sm_v1_2.vp(31): syntax error in protected region.
+# 
+# -- Compiling module hsst_rst_sync_v1_0
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_dcd_rowaddr_v1_2.vp(31): syntax error in protected region.
+# 
+# -- Compiling module hsst_rst_wtchdg_v1_0
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_dcd_bm_v1_2.vp(31): syntax error in protected region.
+# 
+# -- Compiling module hsstl_phy_mac_rdata_proc
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_cfg_apb_v1_2.vp(31): syntax error in protected region.
+# 
+# -- Compiling module hsstl_rst4mcrsw_rx_init_v1_0
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/mcdq_ctrl/ips2l_mcdq_calib_delay_v1_2.vp(31): syntax error in protected region.
+# 
+# -- Compiling module hsstl_rst4mcrsw_rx_rst_fsm_v1_0
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/pll/ips2l_ddrphy_ppll_v1_0.vp(31): syntax error in protected region.
+# 
+# -- Compiling module hsstl_rst4mcrsw_rx_rst_initfsm_v1_0
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_rst_clk_phase_adj_v1_0.vp(31): syntax error in protected region.
+# 
+# -- Compiling module hsstl_rst4mcrsw_rx_v1_0
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_rst_debounce_v1_0.vp(31): syntax error in protected region.
+# 
+# -- Compiling module hsstl_rst4mcrsw_tx_rst_fsm_v1_1
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_calib_mux_v1_0.vp(31): syntax error in protected region.
+# 
+# -- Compiling module hsstl_rst4mcrsw_tx_v1_0
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_calib_top_v1_10.vp(31): syntax error in protected region.
+# 
+# -- Compiling module hsstl_rst4mcrsw_v1_0
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_control_path_adj_v1_10.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ips_hsst_rst_sync_v1_0
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_cpd_lock_v1_0.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ipm2l_pcie_hsstlp_x1_top
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_cpd_ctrl_v1_3.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ipm2l_pcie_hsstlp_x2_top
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_data_slice_dqs_gate_cal_v1_10.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ipm2l_pcie_hsstlp_x4_top
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_data_slice_v1_10.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ipm2l_hsstlp_apb_bridge_v1_2
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_data_slice_wrcal_v1_10.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ipm2l_hsstlp_wrapper_v1_6
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_data_slice_wrlvl_v1_10.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ipm2l_hsstlp_fifo_clr_v1_3
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_gpll_phase_v1_0.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ipm2l_hsstlp_pll_rst_fsm_v1_0
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_dfi_v1_3.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ipm2l_hsstlp_rst_debounce_v1_0
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_dll_update_ctrl_v1_3.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ipm2l_hsstlp_rst_pll_v1_0
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_dqs_gate_coarse_cal_v1_0.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ipm2l_hsstlp_rst_rx_v1_6
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_dqs_rddata_align_v1_10.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ipm2l_hsstlp_rst_sync_v1_0
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_dqsi_rdel_cal_v1_3.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ipm2l_hsstlp_rst_tx_v1_6
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_drift_ctrl_v1_0.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ipm2l_hsstlp_rst_v1_6
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_eyecal_v1_5.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ipm2l_hsstlp_rst_wtchdg_v1_0
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_gate_update_ctrl_v1_3.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ipm2l_hsstlp_rxlane_rst_fsm_v1_6
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_gatecal_v1_10.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ipm2l_hsstlp_txlane_rst_fsm_v1_6
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_info_v1_0.vp(31): syntax error in protected region.
+# 
+# -- Compiling module pcie_test
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_init_v1_0.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ipm2l_fifo_ctrl_v1_1_W_FIFO_16i_128o
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_main_ctrl_v1_10.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ipm2l_sdpram_v1_10_W_FIFO_16i_128o
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_rdcal_v1_10.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ipm2l_fifo_v1_10_W_FIFO_16i_128o
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_reset_ctrl_v1_3.vp(31): syntax error in protected region.
+# 
+# -- Compiling module W_FIFO_16i_128o
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_training_ctrl_v1_0.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ipm2l_fifo_ctrl_v1_1_R_FIFO_128i_128o
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_upcal_v1_0.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ipm2l_sdpram_v1_10_R_FIFO_128i_128o
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_wdata_path_adj_v1_10.vp(31): syntax error in protected region.
+# 
+# -- Compiling module ipm2l_fifo_v1_10_R_FIFO_128i_128o
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_wrcal_v1_7.vp(31): syntax error in protected region.
+# 
+# -- Compiling module R_FIFO_128i_128o
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ddrphy/ips2l_ddrphy_wrlvl_v1_0.vp(31): syntax error in protected region.
+# 
+# -- Compiling module pll
+# ** Error: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/ipcore/ddr3/rtl/ips2l_rst_sync_v1_3.vp(31): syntax error in protected region.
+# 
+# -- Compiling module GTP_GRS
+# -- Compiling module GTP_DRM18K_E1
+# ** Warning: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/pcie/pcie_dma_ctrl/ips2l_pcie_dma_ram/rtl/ipm2l_sdpram_v1_1_ips2l_pcie_dma_ram.v(20): (vlog-2275) 'ipm2l_sdpram_v1_1_ips2l_pcie_dma_ram' already exists and will be overwritten.
+# 
+# -- Compiling module ipm2l_sdpram_v1_1_ips2l_pcie_dma_ram
+# ** Warning: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/pcie/pcie_dma_ctrl/ips2l_pcie_dma_ram/ips2l_pcie_dma_ram.v(18): (vlog-2275) 'ips2l_pcie_dma_ram' already exists and will be overwritten.
+# 
+# -- Compiling module ips2l_pcie_dma_ram
+# ** Warning: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/pcie/pcie_dma_ctrl/ipm_distributed_sdpram_v1_2.v(18): (vlog-2275) 'ipm_distributed_sdpram_v1_2' already exists and will be overwritten.
+# 
+# -- Compiling module ipm_distributed_sdpram_v1_2
+# ** Warning: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/pcie/pcie_dma_ctrl/fifo/ipm_distributed_sdpram_v1_2_distributed_fifo.v(22): (vlog-2275) 'ipm_distributed_sdpram_v1_2_distributed_fifo' already exists and will be overwritten.
+# 
+# -- Compiling module ipm_distributed_sdpram_v1_2_distributed_fifo
+# ** Warning: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/pcie/pcie_dma_ctrl/fifo/pgs_pciex4_fifo_ctrl.v(8): (vlog-2275) 'pgs_pciex4_fifo_ctrl' already exists and will be overwritten.
+# 
+# -- Compiling module pgs_pciex4_fifo_ctrl
+# ** Warning: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/pcie/pcie_dma_ctrl/fifo/pgs_pciex4_fifo_v1_2.v(8): (vlog-2275) 'pgs_pciex4_fifo_v1_2' already exists and will be overwritten.
+# 
+# -- Compiling module pgs_pciex4_fifo_v1_2
+# ** Warning: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/pcie/pcie_dma_ctrl/pgs_pciex4_prefetch_fifo_v1_2.v(8): (vlog-2275) 'pgs_pciex4_prefetch_fifo_v1_2' already exists and will be overwritten.
+# 
+# -- Compiling module pgs_pciex4_prefetch_fifo_v1_2
+# ** Warning: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/pcie/pcie_dma_ctrl/ips2l_pcie_dma_tlp_rcv.v(15): (vlog-2275) 'ips2l_pcie_dma_tlp_rcv' already exists and will be overwritten.
+# 
+# -- Compiling module ips2l_pcie_dma_tlp_rcv
+# ** Warning: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/pcie/pcie_dma_ctrl/ips2l_pcie_dma_rx_mwr_wr_ctrl.v(15): (vlog-2275) 'ips2l_pcie_dma_rx_mwr_wr_ctrl' already exists and will be overwritten.
+# 
+# -- Compiling module ips2l_pcie_dma_rx_mwr_wr_ctrl
+# ** Warning: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/pcie/pcie_dma_ctrl/ips2l_pcie_dma_rx_cpld_wr_ctrl.v(15): (vlog-2275) 'ips2l_pcie_dma_rx_cpld_wr_ctrl' already exists and will be overwritten.
+# 
+# -- Compiling module ips2l_pcie_dma_rx_cpld_wr_ctrl
+# ** Warning: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/pcie/pcie_dma_ctrl/ips2l_pcie_dma_wr_ctrl.v(15): (vlog-2275) 'ips2l_pcie_dma_wr_ctrl' already exists and will be overwritten.
+# 
+# -- Compiling module ips2l_pcie_dma_wr_ctrl
+# ** Warning: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/pcie/pcie_dma_ctrl/ips2l_pcie_dma_rx_top.v(15): (vlog-2275) 'ips2l_pcie_dma_rx_top' already exists and will be overwritten.
+# 
+# -- Compiling module ips2l_pcie_dma_rx_top
+# ** Warning: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/pcie/pcie_dma_ctrl/ips2l_pcie_dma_controller.v(15): (vlog-2275) 'ips2l_pcie_dma_controller' already exists and will be overwritten.
+# 
+# -- Compiling module ips2l_pcie_dma_controller
+# ** Warning: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/pcie/pcie_dma_ctrl/ips2l_pcie_dma_rd_ctrl.v(15): (vlog-2275) 'ips2l_pcie_dma_rd_ctrl' already exists and will be overwritten.
+# 
+# -- Compiling module ips2l_pcie_dma_rd_ctrl
+# ** Warning: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/pcie/pcie_dma_ctrl/ips2l_pcie_dma_tx_mwr_rd_ctrl.v(15): (vlog-2275) 'ips2l_pcie_dma_tx_mwr_rd_ctrl' already exists and will be overwritten.
+# 
+# -- Compiling module ips2l_pcie_dma_tx_mwr_rd_ctrl
+# ** Warning: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/pcie/pcie_dma_ctrl/ips2l_pcie_dma_tx_cpld_rd_ctrl.v(15): (vlog-2275) 'ips2l_pcie_dma_tx_cpld_rd_ctrl' already exists and will be overwritten.
+# 
+# -- Compiling module ips2l_pcie_dma_tx_cpld_rd_ctrl
+# ** Warning: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/pcie/pcie_dma_ctrl/ips2l_pcie_dma_mwr_tx_ctrl.v(15): (vlog-2275) 'ips2l_pcie_dma_mwr_tx_ctrl' already exists and will be overwritten.
+# 
+# -- Compiling module ips2l_pcie_dma_mwr_tx_ctrl
+# ** Warning: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/pcie/pcie_dma_ctrl/ips2l_pcie_dma_mrd_tx_ctrl.v(15): (vlog-2275) 'ips2l_pcie_dma_mrd_tx_ctrl' already exists and will be overwritten.
+# 
+# -- Compiling module ips2l_pcie_dma_mrd_tx_ctrl
+# ** Warning: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/pcie/pcie_dma_ctrl/ips2l_pcie_dma_cpld_tx_ctrl.v(15): (vlog-2275) 'ips2l_pcie_dma_cpld_tx_ctrl' already exists and will be overwritten.
+# 
+# -- Compiling module ips2l_pcie_dma_cpld_tx_ctrl
+# ** Warning: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/pcie/pcie_dma_ctrl/ips2l_pcie_dma_tx_top.v(15): (vlog-2275) 'ips2l_pcie_dma_tx_top' already exists and will be overwritten.
+# 
+# -- Compiling module ips2l_pcie_dma_tx_top
+# ** Warning: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/pcie/pcie_dma_ctrl/ips2l_pcie_dma_tlp_tx_mux.v(15): (vlog-2275) 'ips2l_pcie_dma_tlp_tx_mux' already exists and will be overwritten.
+# 
+# -- Compiling module ips2l_pcie_dma_tlp_tx_mux
+# ** Warning: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/pcie/pcie_dma_ctrl/ips2l_pcie_dma.v(15): (vlog-2275) 'ips2l_pcie_dma' already exists and will be overwritten.
+# 
+# -- Compiling module ips2l_pcie_dma
+# -- Compiling module pcie_axis_host_bfm
+# -- Compiling module dma_write_data_src
+# -- Compiling module host_mem_scoreboard
+# -- Compiling module ips2l_pcie_dma_tb
+# -- Compiling module axi4_mem_model
+# ** Warning: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/tb/ddr_write_path_tb.v(10): (vlog-2263) Redefinition of macro: 'TB_HEIGHT' (previously defined near C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/tb/ips2l_pcie_dma_tb.v(10)) .
+# 
+# -- Compiling module ddr_write_path_tb
+# -- Compiling module rgb888_frame_gen
+# ** Warning: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/models/R_FIFO_128i_128o.v(4): (vlog-2275) 'R_FIFO_128i_128o' already exists and will be overwritten.
+# 
+# -- Compiling module R_FIFO_128i_128o
+# ** Warning: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/models/W_FIFO_16i_128o.v(4): (vlog-2275) 'W_FIFO_16i_128o' already exists and will be overwritten.
+# 
+# -- Compiling module W_FIFO_16i_128o
+# ** Warning: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/models/W_FIFO_16i_128o.v(37): (vlog-2697) MSB of part-select into 'occ' is out of bounds.
+# 
+# ** Warning: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/models/W_FIFO_16i_128o.v(38): (vlog-2697) MSB of part-select into 'avail' is out of bounds.
+# 
+# -- Compiling module hdmi_ddr_write_path
+# ** Warning: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/tb/axi4_ctrl_tb.v(10): (vlog-2263) Redefinition of macro: 'TB_HEIGHT' (previously defined near C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/tb/ddr_write_path_tb.v(10)) .
+# 
+# -- Compiling module axi4_ctrl_tb
+# ** Warning: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/tb/dma_read_bfm.v(5): (vlog-2275) 'dma_read_bfm' already exists and will be overwritten.
+# 
+# -- Compiling module dma_read_bfm
+# -- Compiling module rgb565_frame_gen
+# ** Warning: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/axi_ctrl/axi4_ctrl.v(3): (vlog-2275) 'axi4_ctrl' already exists and will be overwritten.
+# 
+# -- Compiling module axi4_ctrl
+# End time: 20:37:50 on Jul 12,2026, Elapsed time: 0:00:02
+# Errors: 278, Warnings: 30
+# ** Error: F:/Modelsim/win64/vlog failed.
+# Error in macro ./run_behav_compile.tcl line 219
+# F:/Modelsim/win64/vlog failed.
+#     while executing
+# "vlog -work work   \
+# "C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/image_pcie_capture.v" \..."
+# do {run_behav_simulate.tcl}
+# vsim -gui -do "do {run_behav_compile.tcl};do {run_behav_simulate.tcl}" -l run_behav_simulate.log 
+# Start time: 20:37:52 on Jul 12,2026
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/sim/behav/work.ips2l_pcie_dma_tb
+# Loading work.ips2l_pcie_dma_tb
+# Refreshing C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/sim/behav/work.ips2l_pcie_dma
+# Loading work.ips2l_pcie_dma
+# Refreshing C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/sim/behav/work.ips2l_pcie_dma_rx_top
+# Loading work.ips2l_pcie_dma_rx_top
+# Refreshing C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/sim/behav/work.ips2l_pcie_dma_tlp_rcv
+# Loading work.ips2l_pcie_dma_tlp_rcv
+# Refreshing C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/sim/behav/work.ips2l_pcie_dma_rx_cpld_wr_ctrl
+# Loading work.ips2l_pcie_dma_rx_cpld_wr_ctrl
+# Refreshing C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/sim/behav/work.ipm_distributed_sdpram_v1_2
+# Loading work.ipm_distributed_sdpram_v1_2
+# Refreshing C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/sim/behav/work.ips2l_pcie_dma_wr_ctrl
+# Loading work.ips2l_pcie_dma_wr_ctrl
+# Refreshing C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/sim/behav/work.ips2l_pcie_dma_rx_mwr_wr_ctrl
+# Loading work.ips2l_pcie_dma_rx_mwr_wr_ctrl
+# Refreshing C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/sim/behav/work.ips2l_pcie_dma_ram
+# Loading work.ips2l_pcie_dma_ram
+# Refreshing C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/sim/behav/work.ipm2l_sdpram_v1_1_ips2l_pcie_dma_ram
+# Loading work.ipm2l_sdpram_v1_1_ips2l_pcie_dma_ram
+# Refreshing C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/sim/behav/work.ips2l_pcie_dma_controller
+# Loading work.ips2l_pcie_dma_controller
+# Refreshing C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/sim/behav/work.ips2l_pcie_dma_tx_top
+# Loading work.ips2l_pcie_dma_tx_top
+# Refreshing C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/sim/behav/work.ips2l_pcie_dma_tx_cpld_rd_ctrl
+# Loading work.ips2l_pcie_dma_tx_cpld_rd_ctrl
+# Refreshing C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/sim/behav/work.ips2l_pcie_dma_rd_ctrl
+# Loading work.ips2l_pcie_dma_rd_ctrl
+# Refreshing C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/sim/behav/work.pgs_pciex4_prefetch_fifo_v1_2
+# Loading work.pgs_pciex4_prefetch_fifo_v1_2
+# Refreshing C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/sim/behav/work.ips2l_pcie_dma_tx_mwr_rd_ctrl
+# Loading work.ips2l_pcie_dma_tx_mwr_rd_ctrl
+# Refreshing C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/sim/behav/work.ips2l_pcie_dma_cpld_tx_ctrl
+# Loading work.ips2l_pcie_dma_cpld_tx_ctrl
+# Refreshing C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/sim/behav/work.ips2l_pcie_dma_mrd_tx_ctrl
+# Loading work.ips2l_pcie_dma_mrd_tx_ctrl
+# Refreshing C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/sim/behav/work.ips2l_pcie_dma_mwr_tx_ctrl
+# Loading work.ips2l_pcie_dma_mwr_tx_ctrl
+# Refreshing C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/sim/behav/work.pcie_axis_host_bfm
+# Loading work.pcie_axis_host_bfm
+# Refreshing C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/sim/behav/work.dma_write_data_src
+# Loading work.dma_write_data_src
+# Refreshing C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/sim/behav/work.host_mem_scoreboard
+# Loading work.host_mem_scoreboard
+# Refreshing C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/sim/behav/work.GTP_DRM18K_E1
+# Loading work.GTP_DRM18K_E1
+# Refreshing C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/sim/behav/work.pgs_pciex4_fifo_v1_2
+# Loading work.pgs_pciex4_fifo_v1_2
+# Refreshing C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/sim/behav/work.ipm_distributed_sdpram_v1_2_distributed_fifo
+# Loading work.ipm_distributed_sdpram_v1_2_distributed_fifo
+# Refreshing C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/sim/behav/work.pgs_pciex4_fifo_ctrl
+# Loading work.pgs_pciex4_fifo_ctrl
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# PASS: 01: no dma write req after reset
+# PASS: TC-DMA01: axis_slave2 idle
+# PASS: -DMA02: CMD only, no dma req yet
+do ips2l_pcie_dma_wave.do
+# Cannot open macro file: ips2l_pcie_dma_wave.do
+cd 08_HDMI_pcie_capture_40pin_100k\project\sim\behav
+# Cannot change directory while a simulation is in progress.
+# Use the "quit -sim" command to unload the design first.
+run_ips2l_pcie_dma_gui.bat
+# invalid command name "run_ips2l_pcie_dma_gui.bat"
+do C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/sim/behav/load_ips2l_pcie_dma_wave.do
+# .
+# Loading wave groups: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/sim/behav/ips2l_pcie_dma_wave.do
+# /ips2l_pcie_dma_tb
+# /ips2l_pcie_dma_tb/u_dut
+# /ips2l_pcie_dma_tb/u_dut/u_ips2l_pcie_dma_rx_top
+# /ips2l_pcie_dma_tb/u_dut/u_ips2l_pcie_dma_controller
+# /ips2l_pcie_dma_tb/u_dut/u_ips2l_pcie_dma_tx_top
+# /ips2l_pcie_dma_tb/u_dut/u_ips2l_pcie_dma_tx_top/u_ips2l_pcie_dma_tx_mwr_rd_ctrl
+restart
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+run
+run
+# PASS: 01: no dma write req after reset
+# PASS: TC-DMA01: axis_slave2 idle
+# PASS: -DMA02: CMD only, no dma req yet
+run
+run
+# PASS: TC-DMA03: dma req beat count
+# PASS: TC-DMA04: host mem base addr
+# PASS: all 16 payload beats match pattern
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# End time: 02:40:06 on Jul 13,2026, Elapsed time: 6:02:14
+# Errors: 3, Warnings: 2

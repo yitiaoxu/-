@@ -1,0 +1,57 @@
+onerror {resume}
+quietly WaveActivateNextPane {} 0
+add wave -noupdate -divider {clk / rst}
+add wave -noupdate /ddr_write_path_tb/pixclk_in
+add wave -noupdate /ddr_write_path_tb/axi_clk
+add wave -noupdate /ddr_write_path_tb/rst_n
+add wave -noupdate /ddr_write_path_tb/axi_reset
+add wave -noupdate -divider {RGB888 Input}
+add wave -noupdate /ddr_write_path_tb/de_in
+add wave -noupdate /ddr_write_path_tb/vs_in
+add wave -noupdate -radix hexadecimal /ddr_write_path_tb/r_in
+add wave -noupdate -radix hexadecimal /ddr_write_path_tb/g_in
+add wave -noupdate -radix hexadecimal /ddr_write_path_tb/b_in
+add wave -noupdate -divider {Video Input Registers}
+add wave -noupdate /ddr_write_path_tb/de_in_d0
+add wave -noupdate -radix hexadecimal /ddr_write_path_tb/r_in_d0
+add wave -noupdate -radix hexadecimal /ddr_write_path_tb/g_in_d0
+add wave -noupdate -radix hexadecimal /ddr_write_path_tb/b_in_d0
+add wave -noupdate -divider {RGB565 / Write Side}
+add wave -noupdate /ddr_write_path_tb/wframe_data_en
+add wave -noupdate -radix hexadecimal /ddr_write_path_tb/wframe_data
+add wave -noupdate /ddr_write_path_tb/wframe_vsync
+add wave -noupdate /ddr_write_path_tb/hdmi_vsync_eof
+add wave -noupdate -divider {Frame Buffer Index}
+add wave -noupdate -radix unsigned /ddr_write_path_tb/rc_wframe_index
+add wave -noupdate -radix unsigned /ddr_write_path_tb/rc_rframe_index
+add wave -noupdate -divider {AXI Write}
+add wave -noupdate /ddr_write_path_tb/axi_awvalid
+add wave -noupdate /ddr_write_path_tb/axi_awready
+add wave -noupdate -radix hexadecimal /ddr_write_path_tb/axi_awaddr
+add wave -noupdate /ddr_write_path_tb/axi_wvalid
+add wave -noupdate /ddr_write_path_tb/axi_wready
+add wave -noupdate /ddr_write_path_tb/axi_wlast
+add wave -noupdate -radix hexadecimal /ddr_write_path_tb/axi_wdata
+add wave -noupdate -divider Scoreboard
+add wave -noupdate -radix unsigned /ddr_write_path_tb/cvt_err_cnt
+add wave -noupdate -radix unsigned /ddr_write_path_tb/test_err_cnt
+add wave -noupdate -radix unsigned /ddr_write_path_tb/slot_write_bytes_0
+add wave -noupdate -radix unsigned /ddr_write_path_tb/write_burst_cnt
+TreeUpdate [SetDefaultTree]
+WaveRestoreCursors {{Cursor 1} {0 ps} 0}
+quietly wave cursor active 0
+configure wave -namecolwidth 150
+configure wave -valuecolwidth 100
+configure wave -justifyvalue left
+configure wave -signalnamewidth 0
+configure wave -snapdistance 10
+configure wave -datasetprefix 0
+configure wave -rowmargin 4
+configure wave -childrowmargin 2
+configure wave -gridoffset 0
+configure wave -gridperiod 1
+configure wave -griddelta 40
+configure wave -timeline 0
+configure wave -timelineunits ns
+update
+WaveRestoreZoom {500 ns} {1200 ns}

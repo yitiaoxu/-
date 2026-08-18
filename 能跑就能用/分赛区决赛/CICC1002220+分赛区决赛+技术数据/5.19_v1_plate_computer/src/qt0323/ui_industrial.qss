@@ -1,0 +1,297 @@
+/* Industrial HMI ¡ª pure white, low-saturation, flat */
+
+* {
+    font-family: "Microsoft YaHei", "Segoe UI", "PingFang SC", sans-serif;
+}
+
+QMainWindow, QWidget#RootWidget {
+    background-color: #FFFFFF;
+    color: #1F2937;
+}
+
+/* ---- Left navigation ---- */
+QWidget#NavSidebar {
+    background-color: #F5F6F8;
+    border-right: 1px solid #E8EAED;
+}
+
+QLabel#NavBrand {
+    color: #111827;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 8px 4px 4px 4px;
+}
+
+QLabel#NavSub {
+    color: #9CA3AF;
+    font-size: 11px;
+    padding: 0 4px 16px 4px;
+}
+
+QPushButton#NavButton {
+    background-color: transparent;
+    color: #374151;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 15px;
+    font-weight: 500;
+    min-height: 20px;
+}
+
+QPushButton#NavButton:hover {
+    background-color: #EEF2F7;
+    color: #1F2937;
+}
+
+QPushButton#NavButton:pressed {
+    background-color: #E5E9F0;
+}
+
+QPushButton#NavButton:disabled {
+    color: #C5CBD3;
+    background-color: transparent;
+}
+
+/* ---- Top bar ---- */
+QWidget#TopBar {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #E8EAED;
+}
+
+QLabel#TopTitle {
+    color: #111827;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+QLabel#TopSubtitle {
+    color: #9CA3AF;
+    font-size: 12px;
+}
+
+QLabel#StatusLed {
+    min-width: 10px;
+    max-width: 10px;
+    min-height: 10px;
+    max-height: 10px;
+    border-radius: 5px;
+    background-color: #9CA3AF;
+}
+
+QLabel#StatusLed[state="ready"] {
+    background-color: #9CA3AF;
+}
+
+QLabel#StatusLed[state="running"] {
+    background-color: #3B82F6;
+}
+
+QLabel#StatusLed[state="ok"] {
+    background-color: #10B981;
+}
+
+QLabel#StatusLed[state="err"] {
+    background-color: #EF4444;
+}
+
+QLabel#TopStatusText {
+    color: #6B7280;
+    font-size: 12px;
+}
+
+/* ---- Main viewport ---- */
+QFrame#ViewportFrame {
+    background-color: #FAFBFC;
+    border: 1px solid #E8EAED;
+    border-radius: 10px;
+}
+
+QWidget#DisplayLabel {
+    background-color: #FAFBFC;
+    color: #9CA3AF;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+/* ---- Toolbar / footer controls ---- */
+QPushButton#ToolButton {
+    background-color: #FFFFFF;
+    color: #374151;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-size: 12px;
+    font-weight: 500;
+    min-height: 18px;
+}
+
+QPushButton#ToolButton:hover {
+    background-color: #F3F4F6;
+    border-color: #D1D5DB;
+}
+
+QPushButton#ToolButton:pressed {
+    background-color: #EEF2F7;
+}
+
+QPushButton#ToolButton:disabled {
+    color: #D1D5DB;
+    border-color: #F3F4F6;
+    background-color: #FAFAFA;
+}
+
+QLabel#PageIndicator {
+    color: #111827;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 6px 4px;
+}
+
+QPushButton#GalleryNavButton {
+    background-color: #FFFFFF;
+    color: #1F2937;
+    border: 1px solid #D1D5DB;
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-size: 16px;
+    font-weight: 600;
+    min-height: 24px;
+    min-width: 108px;
+}
+
+QPushButton#GalleryNavButton:hover {
+    background-color: #F3F4F6;
+    border-color: #9CA3AF;
+    color: #111827;
+}
+
+QPushButton#GalleryNavButton:pressed {
+    background-color: #E5E9F0;
+}
+
+QPushButton#GalleryNavButton:disabled {
+    color: #C5CBD3;
+    border-color: #E5E7EB;
+    background-color: #FAFAFA;
+}
+
+QProgressBar {
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    background-color: #F3F4F6;
+    color: #6B7280;
+    text-align: center;
+    min-height: 24px;
+    max-height: 24px;
+    font-size: 13px;
+}
+
+QProgressBar::chunk {
+    background-color: #6B9BD1;
+    border-radius: 7px;
+}
+
+QLabel#FooterStatus {
+    color: #6B7280;
+    font-size: 14px;
+    padding: 6px 10px;
+    background-color: #F9FAFB;
+    border: 1px solid #EEF0F2;
+    border-radius: 8px;
+}
+
+QLabel#MetricLabel {
+    color: #9CA3AF;
+    font-size: 11px;
+}
+
+QLabel#MetricValue {
+    color: #111827;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* ---- System dialogs ---- */
+QFileDialog, QMessageBox {
+    background-color: #FFFFFF;
+    color: #1F2937;
+}
+
+QFileDialog QPushButton, QMessageBox QPushButton {
+    background-color: #FFFFFF;
+    color: #374151;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-size: 12px;
+}
+
+QFileDialog QPushButton:hover, QMessageBox QPushButton:hover {
+    background-color: #F3F4F6;
+}
+
+QSlider#LabelScaleSlider {
+    min-height: 22px;
+}
+
+QSlider#LabelScaleSlider::groove:horizontal {
+    height: 6px;
+    background: #E5E7EB;
+    border-radius: 3px;
+}
+
+QSlider#LabelScaleSlider::handle:horizontal {
+    width: 14px;
+    margin: -5px 0;
+    background: #6B9BD1;
+    border: 1px solid #5A8AC4;
+    border-radius: 7px;
+}
+
+QSlider#LabelScaleSlider::sub-page:horizontal {
+    background: #6B9BD1;
+    border-radius: 3px;
+}
+
+QLabel#PlateResultCaption {
+    color: #475569;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 4px 0;
+}
+
+QFrame#PlateResultPanel {
+    background-color: #0B1220;
+    border: 2px solid #2563EB;
+    border-radius: 14px;
+}
+
+QLabel#PlateNumberDisplay {
+    color: #E2E8F0;
+    font-size: 30px;
+    font-weight: 800;
+    font-family: "Consolas", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+    padding: 4px 2px;
+    min-height: 48px;
+}
+
+QLabel#PlateNumberDisplay[state="hit"] {
+    color: #FFFFFF;
+}
+
+QLabel#PlateNumberDisplay[state="empty"] {
+    color: #64748B;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+QLabel#PlateCountDisplay {
+    color: #94A3B8;
+    font-size: 12px;
+    font-weight: 600;
+    padding-top: 2px;
+}

@@ -1,0 +1,66 @@
+# vsim -c -do "do ddr_write_path_sim_batch.do" 
+# Start time: 10:18:11 on Jul 10,2026
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# //  ModelSim SE-64 10.4 Dec  3 2014 
+# //
+# //  Copyright 1991-2014 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
+# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
+# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
+# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
+# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
+# //
+# Refreshing C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/modelsim/work.ddr_write_path_tb
+# Loading work.ddr_write_path_tb
+# Refreshing C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/modelsim/work.rgb888_frame_gen
+# Loading work.rgb888_frame_gen
+# Refreshing C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/modelsim/work.hdmi_ddr_write_path
+# Loading work.hdmi_ddr_write_path
+# Refreshing C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/modelsim/work.axi4_ctrl
+# Loading work.axi4_ctrl
+# Refreshing C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/modelsim/work.W_FIFO_16i_128o
+# Loading work.W_FIFO_16i_128o
+# Refreshing C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/modelsim/work.R_FIFO_128i_128o
+# Loading work.R_FIFO_128i_128o
+# Refreshing C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/modelsim/work.axi4_mem_model
+# Loading work.axi4_mem_model
+# ** Warning: (vsim-3017) C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/axi_ctrl/axi4_ctrl.v(279): [TFMPC] - Too few port connections. Expected 14, found 10.
+#    Time: 0 ps  Iteration: 0  Instance: /ddr_write_path_tb/u_dut/u_axi4_ctrl/u_W_FIFO_16i_128o File: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/models/W_FIFO_16i_128o.v
+# ** Warning: (vsim-3722) C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/axi_ctrl/axi4_ctrl.v(279): [TFMPC] - Missing connection for port 'wr_full'.
+# ** Warning: (vsim-3722) C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/axi_ctrl/axi4_ctrl.v(279): [TFMPC] - Missing connection for port 'wr_water_level'.
+# ** Warning: (vsim-3722) C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/axi_ctrl/axi4_ctrl.v(279): [TFMPC] - Missing connection for port 'almost_full'.
+# ** Warning: (vsim-3722) C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/axi_ctrl/axi4_ctrl.v(279): [TFMPC] - Missing connection for port 'rd_water_level'.
+# ** Warning: (vsim-3017) C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/axi_ctrl/axi4_ctrl.v(370): [TFMPC] - Too few port connections. Expected 14, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /ddr_write_path_tb/u_dut/u_axi4_ctrl/u_R_FIFO_128i_128o File: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/models/R_FIFO_128i_128o.v
+# ** Warning: (vsim-3722) C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/axi_ctrl/axi4_ctrl.v(370): [TFMPC] - Missing connection for port 'wr_full'.
+# ** Warning: (vsim-3722) C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/axi_ctrl/axi4_ctrl.v(370): [TFMPC] - Missing connection for port 'wr_water_level'.
+# ** Warning: (vsim-3722) C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/axi_ctrl/axi4_ctrl.v(370): [TFMPC] - Missing connection for port 'rd_empty'.
+# ** Warning: (vsim-3722) C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/axi_ctrl/axi4_ctrl.v(370): [TFMPC] - Missing connection for port 'rd_water_level'.
+# ** Warning: (vsim-3722) C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/axi_ctrl/axi4_ctrl.v(370): [TFMPC] - Missing connection for port 'almost_empty'.
+# === TC-V01/V02 register + convert spot check ===
+# [PASS] TC-V01 de_in_d0 delayed: 1
+# [PASS] TC-V01 r_in_d0: 255
+# [PASS] TC-V01 g_in_d0: 128
+# [PASS] TC-V02 wframe_data: 64512
+# === TC-W01 reset defaults ===
+# [PASS] rc_wframe_index: 0
+# [PASS] rc_rframe_index: 2
+# === TC-V03/TC-W02 write Frame0 ===
+# [PASS] TC-W02 slot0_has_frame: 1
+# [PASS] TC-W02 write_burst_activity: 1
+# [PASS] TC-W02 eof_flush_done: 1
+# [PASS] TC-V03 cvt_err_cnt: 0
+# [PASS] TC-W03 pixel0_lo: 0
+# [PASS] TC-W03 pixel0_hi: 0
+# === SUMMARY pass=12 err=0 reg_err=0 cvt_err=0 ===
+# ALL TESTS PASSED
+# ** Note: $finish    : C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/tb/ddr_write_path_tb.v(247)
+#    Time: 39930300 ps  Iteration: 0  Instance: /ddr_write_path_tb
+# End time: 10:18:13 on Jul 10,2026, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 12

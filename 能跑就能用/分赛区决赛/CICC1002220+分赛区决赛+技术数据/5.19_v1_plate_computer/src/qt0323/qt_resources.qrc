@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>ui_industrial.qss</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,128 @@
+##### Written on 2026/07/13 01:39:09 ###############################
+
+
+##### INFO ##################################################
+
+Current device : 
+	PG2L100H-6FBG484
+
+Top Module : 
+	image_pcie_capture
+
+Constraint File(s) : 
+	C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/project.fdc
+
+##### SUMMARY ######################################################
+
+Found 0 error(s), 22 critical warning(s), 23 warning(s), out of 629 constraint(s)
+
+
+Inapplicable constraints(except overwritten constraints):
+********************************************
+
+define_attribute {p:board_rst_n} {PAP_IO_LOC} {M15}        
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/project.fdc(line number: 481)] | Port board_rst_n has been placed at location M15, whose type is share pin.
+
+define_attribute {p:perst_n} {PAP_IO_LOC} {M16}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/project.fdc(line number: 549)] | Port perst_n has been placed at location M16, whose type is share pin.
+
+define_attribute {p:b_in[7]} {PAP_IO_LOC} {AB18}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/project.fdc(line number: 767)] | Port b_in[7] has been placed at location AB18, whose type is share pin.
+
+define_attribute {p:b_in[6]} {PAP_IO_LOC} {P15}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/project.fdc(line number: 772)] | Port b_in[6] has been placed at location P15, whose type is share pin.
+
+define_attribute {p:b_in[4]} {PAP_IO_LOC} {R16}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/project.fdc(line number: 782)] | Port b_in[4] has been placed at location R16, whose type is share pin.
+
+define_attribute {p:b_in[2]} {PAP_IO_LOC} {N13}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/project.fdc(line number: 792)] | Port b_in[2] has been placed at location N13, whose type is share pin.
+
+define_attribute {p:b_in[0]} {PAP_IO_LOC} {N14}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/project.fdc(line number: 802)] | Port b_in[0] has been placed at location N14, whose type is share pin.
+
+define_attribute {p:g_in[7]} {PAP_IO_LOC} {AB20}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/project.fdc(line number: 809)] | Port g_in[7] has been placed at location AB20, whose type is share pin.
+
+define_attribute {p:g_in[6]} {PAP_IO_LOC} {R18}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/project.fdc(line number: 814)] | Port g_in[6] has been placed at location R18, whose type is share pin.
+
+define_attribute {p:g_in[5]} {PAP_IO_LOC} {V17}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/project.fdc(line number: 819)] | Port g_in[5] has been placed at location V17, whose type is share pin.
+
+define_attribute {p:g_in[4]} {PAP_IO_LOC} {T18}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/project.fdc(line number: 824)] | Port g_in[4] has been placed at location T18, whose type is share pin.
+
+define_attribute {p:g_in[3]} {PAP_IO_LOC} {W17}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/project.fdc(line number: 829)] | Port g_in[3] has been placed at location W17, whose type is share pin.
+
+define_attribute {p:g_in[1]} {PAP_IO_LOC} {AA18}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/project.fdc(line number: 839)] | Port g_in[1] has been placed at location AA18, whose type is share pin.
+
+define_attribute {p:g_in[0]} {PAP_IO_LOC} {P17}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/project.fdc(line number: 844)] | Port g_in[0] has been placed at location P17, whose type is share pin.
+
+define_attribute {p:r_in[7]} {PAP_IO_LOC} {AB21}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/project.fdc(line number: 851)] | Port r_in[7] has been placed at location AB21, whose type is share pin.
+
+define_attribute {p:r_in[5]} {PAP_IO_LOC} {AB22}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/project.fdc(line number: 861)] | Port r_in[5] has been placed at location AB22, whose type is share pin.
+
+define_attribute {p:r_in[1]} {PAP_IO_LOC} {AA19}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/project.fdc(line number: 881)] | Port r_in[1] has been placed at location AA19, whose type is share pin.
+
+define_attribute {p:de_in} {PAP_IO_LOC} {P16}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/project.fdc(line number: 893)] | Port de_in has been placed at location P16, whose type is share pin.
+
+define_attribute {p:hs_in} {PAP_IO_LOC} {U17}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/project.fdc(line number: 900)] | Port hs_in has been placed at location U17, whose type is share pin.
+
+define_attribute {p:vs_in} {PAP_IO_LOC} {R17}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/project.fdc(line number: 907)] | Port vs_in has been placed at location R17, whose type is share pin.
+
+define_attribute {p:hd_sda} {PAP_IO_LOC} {AA20}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/project.fdc(line number: 914)] | Port hd_sda has been placed at location AA20, whose type is share pin.
+
+define_attribute {p:hd_scl} {PAP_IO_LOC} {AA21}
+	C: ConstraintEditor-2002: [C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/project/project.fdc(line number: 922)] | Port hd_scl has been placed at location AA21, whose type is share pin.
+
+
+Constraints with issues:
+********************************************
+
+
+Issues without commands:
+********************************************
+
+
+Unconstrained ports:
+********************************************
+
+W: ConstraintEditor-4019: Port Bus 'cmos1_data' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port Bus 'cmos2_data' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port Bus 'cmos_init_done' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port Bus 'rxn' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port Bus 'rxp' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port Bus 'txn' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port Bus 'txp' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port 'cmos1_href' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port 'cmos1_pclk' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port 'cmos1_reset' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port 'cmos1_scl' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port 'cmos1_sda' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port 'cmos1_vsync' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port 'cmos2_href' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port 'cmos2_pclk' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port 'cmos2_reset' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port 'cmos2_scl' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port 'cmos2_sda' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port 'cmos2_vsync' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port 'heart_beat_led' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port 'pclk_led' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port 'ref_led' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port 'rx_rst_n' unspecified I/O constraint.
+
+Constraints with matching wildcard expressions:
+********************************************
+
+

@@ -1,0 +1,1 @@
+cmd_/home/linaro/Desktop/pango_pcie_dma_allo/pcie_image_test/driver/pango_pci_driver.mod := printf '%s\n'   pango_pci_driver.o | awk '!x[$$0]++ { print("/home/linaro/Desktop/pango_pcie_dma_allo/pcie_image_test/driver/"$$0) }' > /home/linaro/Desktop/pango_pcie_dma_allo/pcie_image_test/driver/pango_pci_driver.mod

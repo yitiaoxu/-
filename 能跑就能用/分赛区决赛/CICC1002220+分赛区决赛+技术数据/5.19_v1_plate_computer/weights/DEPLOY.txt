@@ -1,0 +1,24 @@
+板端 weights/ 目录放置 RKNN 模型（二选一，优先 INT8）：
+
+【推荐 INT8，RK3568 更快】
+  plate_detect_int8.rknn
+  plate_rec_color_int8.rknn
+
+【FP 备选，精度更稳但更慢】
+  plate_detect_fp.rknn
+  plate_rec_fp.rknn
+
+INT8 在 PC/VM 上用 RKNN Toolkit2 转换，见：
+  scripts/convert_rknn_models.py
+
+INT8 在板端推理请固定：
+  --input-mode uint8_nhwc
+（不要用 auto，float 输入会触发 normalize error）
+
+若仍 [FAIL] / detect head all zeros：
+  1. 确认转换时 --target-platform rk3568
+  2. 用 Chinese_license_plate.../tools/rknn_prepare_calibration.py 生成校准集
+     （detect: letterbox 640 BGR；rec: 168x48 BGR）
+  3. python scripts/convert_rknn_models.py detect/rec ... --calib-root ...
+  4. 对比 FP：export PLATE_USE_FP=1 && ./run.sh
+  5. FP 正常而 INT8 全零 → 必须重转 INT8，不是板端程序问题

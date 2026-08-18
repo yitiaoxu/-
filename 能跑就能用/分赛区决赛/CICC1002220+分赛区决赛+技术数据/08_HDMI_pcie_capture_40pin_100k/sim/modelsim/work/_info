@@ -1,0 +1,138 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/modelsim
+vaxi4_ctrl
+Z1 !s110 1783659832
+!i10b 1
+!s100 `PI>G?Nd9WiF`;XSj^zbc2
+IWej21H5D4GV_d?B7D52831
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1783563217
+8C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/axi_ctrl/axi4_ctrl.v
+FC:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/axi_ctrl/axi4_ctrl.v
+L0 3
+Z3 OL;L;10.4;61
+r1
+!s85 0
+31
+Z4 !s108 1783659832.719000
+Z5 !s107 ../../source/video_resolution.vh|C:\Users\23694\Desktop\ziguang_project\02_pcie_image_test_1080p_v1\08_HDMI_pcie_capture_40pin_100k\source\axi_ctrl\..\video_resolution.vh|C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/tb/axi4_ctrl_tb.v|C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/tb/axi4_mem_model.v|C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/tb/dma_read_bfm.v|C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/tb/rgb565_frame_gen.v|C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/axi_ctrl/axi4_ctrl.v|C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/models/R_FIFO_128i_128o.v|C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/models/W_FIFO_16i_128o.v|
+Z6 !s90 -work|work|-timescale|1ns/1ps|+incdir+C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source|C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/models/W_FIFO_16i_128o.v|C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/models/R_FIFO_128i_128o.v|C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/axi_ctrl/axi4_ctrl.v|C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/tb/rgb565_frame_gen.v|C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/tb/dma_read_bfm.v|C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/tb/axi4_mem_model.v|C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/tb/axi4_ctrl_tb.v|-l|compile.log|
+!i113 0
+Z7 o-work work -timescale 1ns/1ps -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z8 !s92 -work work -timescale 1ns/1ps +incdir+C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+vaxi4_ctrl_tb
+R1
+!i10b 1
+!s100 FiBJ3?fX2VG?0jEFEeQQg1
+IXiCNSb1>]6<o<ZZ@HeOeg3
+R2
+R0
+w1783659798
+8C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/tb/axi4_ctrl_tb.v
+FC:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/tb/axi4_ctrl_tb.v
+Z9 L0 13
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vaxi4_mem_model
+R1
+!i10b 1
+!s100 [9>j@bRCe5GcVEMBP5QQh1
+IGzWFno?[=;085Fbm:F:WO2
+R2
+R0
+w1783647082
+8C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/tb/axi4_mem_model.v
+FC:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/tb/axi4_mem_model.v
+L0 4
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vR_FIFO_128i_128o
+R1
+!i10b 1
+!s100 @iH5?dVTb3CbF5:A0Z9Um0
+I^4Z[dTbcAf2LfEzlhFh3Z2
+R2
+R0
+w1783647535
+8C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/models/R_FIFO_128i_128o.v
+FC:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/models/R_FIFO_128i_128o.v
+L0 4
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+n@r_@f@i@f@o_128i_128o
+vrgb565_frame_gen
+R1
+!i10b 1
+!s100 L0lYU_e52Z4:BJNFNz;ak3
+I>1=3FOkk;TLcVaoofmD133
+R2
+R0
+w1783659765
+8C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/tb/rgb565_frame_gen.v
+FC:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/tb/rgb565_frame_gen.v
+R9
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vW_FIFO_16i_128o
+R1
+!i10b 1
+!s100 UkP2LRQMiDAdndz`:YbY;3
+Inz5>zBIg@^Elj1Lckz:b[3
+R2
+R0
+w1783649702
+8C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/models/W_FIFO_16i_128o.v
+FC:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/models/W_FIFO_16i_128o.v
+L0 4
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+n@w_@f@i@f@o_16i_128o

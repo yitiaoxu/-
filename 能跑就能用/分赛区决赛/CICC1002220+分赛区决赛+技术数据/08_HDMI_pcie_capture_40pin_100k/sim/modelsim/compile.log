@@ -1,0 +1,16 @@
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+Start time: 13:03:52 on Jul 10,2026
+vlog -work work -timescale 1ns/1ps "+incdir+C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source" C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/models/W_FIFO_16i_128o.v C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/models/R_FIFO_128i_128o.v C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/source/axi_ctrl/axi4_ctrl.v C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/tb/rgb565_frame_gen.v C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/tb/dma_read_bfm.v C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/tb/axi4_mem_model.v C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/tb/axi4_ctrl_tb.v -l compile.log 
+-- Compiling module W_FIFO_16i_128o
+** Warning: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/models/W_FIFO_16i_128o.v(37): (vlog-2697) MSB of part-select into 'occ' is out of bounds.
+** Warning: C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/models/W_FIFO_16i_128o.v(38): (vlog-2697) MSB of part-select into 'avail' is out of bounds.
+-- Compiling module R_FIFO_128i_128o
+-- Compiling module axi4_ctrl
+-- Compiling module rgb565_frame_gen
+-- Compiling module dma_read_bfm
+** Error: (vlog-13069) C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/tb/dma_read_bfm.v(37): near "[": syntax error, unexpected '[', expecting ';'.
+** Error: (vlog-13069) C:/Users/23694/Desktop/ziguang_project/02_pcie_image_test_1080p_v1/08_HDMI_pcie_capture_40pin_100k/sim/tb/dma_read_bfm.v(38): near "[": syntax error, unexpected '[', expecting ';'.
+-- Compiling module axi4_mem_model
+-- Compiling module axi4_ctrl_tb
+End time: 13:03:52 on Jul 10,2026, Elapsed time: 0:00:00
+Errors: 2, Warnings: 2
